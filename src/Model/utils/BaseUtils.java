@@ -7,10 +7,15 @@ package Model.utils;
 import java.sql.*;
 /**
  *
- * @author brian-kamau
+ * @author Esperant
  */
 public interface BaseUtils {
     
     public boolean getConnection() throws SQLException;
+    /**
+     *
+     * @return
+     * @throws SQLException
+     */
     public boolean closeConnection() throws SQLException;
 }

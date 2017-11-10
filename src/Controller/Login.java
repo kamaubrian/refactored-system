@@ -5,17 +5,41 @@
  */
 package Controller;
 import View.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JFrame;
 import javax.swing.UnsupportedLookAndFeelException;
+
 /**
  *
- * @author brian-kamau
+ * @author Esperant
  */
 
 public class Login {
     static LoginView loginview = new LoginView();
+    static loginHandler login = new loginHandler();
+    static exitHandler exit = new exitHandler();
+    
+    
+    static class loginHandler implements ActionListener{
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            System.out.println("Testing Action Listener");
+            
+        }
+        
+    }
+    static class exitHandler implements ActionListener{
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            System.exit(0);
+        }
+        
+    }
     
     static{
         try{
@@ -30,8 +54,6 @@ public class Login {
         }
     
     }
-
-
     /**
      * @param args the command line arguments
      */
@@ -40,9 +62,16 @@ public class Login {
     }
     
     public static JFrame showPage(){
+        loginview.exitSystem().addActionListener(exit);
+        loginview.loginSystem().addActionListener(login);
         loginview.setVisible(true);
         return loginview;
        
     }
+    
+    
+    
+    
+    
 }
 

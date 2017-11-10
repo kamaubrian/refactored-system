@@ -23,6 +23,9 @@ public abstract class Base implements BaseUtils {
     */    
     @Override
     public boolean getConnection() throws SQLException{
+        /*
+        include class.forName(com.mysql.cj.Driver);
+        */
         conn=DriverManager.getConnection(dbUrl, dbUsername, dbPassword);
         return true;
     }
