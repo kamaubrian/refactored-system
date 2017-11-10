@@ -19,6 +19,7 @@ public  abstract class Base implements BaseUtils {
     protected Statement stat = null;
     protected Connection conn = null;
     protected PreparedStatement pst = null;
+    protected ResultSet rst = null;
     /*
     Include dbDriver if using java 1.5 -> com.mysql.cj.Driver
     include class.forName(dbDriver) for it to work

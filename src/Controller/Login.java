@@ -5,12 +5,15 @@
  */
 package Controller;
 import View.*;
+import Model.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JFrame;
 import javax.swing.UnsupportedLookAndFeelException;
+import java.sql.*;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -21,13 +24,46 @@ public class Login {
     static LoginView loginview = new LoginView();
     static loginHandler login = new loginHandler();
     static exitHandler exit = new exitHandler();
+    static LoginModel loginmodel = new LoginModel();
     
     
     static class loginHandler implements ActionListener{
 
         @Override
         public void actionPerformed(ActionEvent e) {
-            System.out.println("Testing Action Listener");
+            try{
+                String username = loginview.getUsername().getText();
+                String password = loginview.getPassword().getText();
+                String pass =loginmodel.getPassword(password);
+                String usern = loginmodel.getUsername(username);
+                if(username.isEmpty()){
+                    JOptionPane.showMessageDialog(loginview,"Please Enter Username");
+                    return;
+                }
+                if(password.isEmpty()){
+                    JOptionPane.showMessageDialog(loginview, "Please Enter Password");
+                    return;
+                }
+                if(username.equals(usern) && password.equals(pass)){
+                    System.out.println("Correct Credentials ");
+                }else{
+                    System.out.println("Incorrect Password");
+                }
+                
+               /* if(!loginmodel.getAdmin(username).isEmpty()){
+                    usern = loginmodel.getAdmin(username).get(0);
+                    pass = loginmodel.getAdmin(username).get(1);
+                   if(pass.equals(password)){
+                       System.out.println("Correct Password");
+                   }else{
+                       System.out.println("Incorrect Password");
+                   } 
+                   
+                }*/
+            }catch(Exception ex){
+                ex.printStackTrace();
+            }
+            
             
         }
         
