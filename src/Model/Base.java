@@ -6,11 +6,13 @@
 package Model;
 import Model.utils.*;
 import java.sql.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 /**
  *
  * @author Esperant
  */
-public abstract class Base implements BaseUtils {
+public  abstract class Base implements BaseUtils {
     public static String dbUsername ="root";
     public static String dbPassword="wamatu";
     public static String dbUrl="jdbc:mysql://localhost:3306/CarRental?useSSL=false";
@@ -35,5 +37,30 @@ public abstract class Base implements BaseUtils {
             conn.close();
         }
         return true;
+    }
+    protected Base(){
+        String sql;
+      
+        try{
+        getConnection();
+        stat = conn.createStatement();
+        sql ="CREATE TABLE IF NOT EXISTS USER(ID INT NOT NULL AUTO_INCREMENT,"
+                + "Username VARCHAR(25) NOT NULL,"
+                + "Password VARCHAR(16) NOT NULL,"
+                + "Created_At TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,"
+                + "PRIMARY KEY(ID))";
+        stat.addBatch(sql);
+        stat.executeBatch();
+            
+        }catch(SQLException ex){
+            ex.printStackTrace();
+        }finally{
+            try {
+                closeConnection();
+            } catch (SQLException ex) {
+                Logger.getLogger(Base.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+         
     }
 }
