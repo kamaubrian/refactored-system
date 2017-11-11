@@ -176,7 +176,7 @@ public  final class NewUserV extends javax.swing.JFrame {
     }//GEN-LAST:event_cmdSubmitActionPerformed
 
     private void cmdCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdCancelActionPerformed
-        this.dispose();
+       
     }//GEN-LAST:event_cmdCancelActionPerformed
 
     private void cmdSubmitMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cmdSubmitMouseClicked

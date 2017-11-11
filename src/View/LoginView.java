@@ -22,7 +22,8 @@ public final class LoginView extends javax.swing.JFrame {
                
         this.setLocation(300, 100);
         this.setTitle("Arles Car Rental");
-        this.setResizable(false); 
+        this.setResizable(false);
+
         initComponents();
        
         

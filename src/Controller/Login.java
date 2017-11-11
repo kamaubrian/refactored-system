@@ -24,6 +24,8 @@ import javax.swing.event.AncestorListener;
  */
 
 public class Login {
+    
+    
     static LoginView loginview = new LoginView();
     static NewUserV userview = new NewUserV();
     static loginHandler login = new loginHandler();
@@ -53,6 +55,7 @@ public class Login {
                     System.out.println("Correct Credentials ");
                 }else{
                     System.out.println("Incorrect Password");
+                    
                 }
                 
                /* if(!loginmodel.getAdmin(username).isEmpty()){
@@ -130,6 +133,11 @@ public class Login {
     }
     
     public static JFrame showPage(){
+        /* if(loginview.verifyUser().getItemAt(0).equals("Admin")){
+                loginview.getUsername().setEnabled(false);
+            }else{
+                loginview.getUsername().setEnabled(true);
+            }*/
         loginview.createAccount().addMouseListener(signup);
         loginview.exitSystem().addActionListener(exit);
         loginview.loginSystem().addActionListener(login);

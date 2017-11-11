@@ -51,7 +51,15 @@ public  abstract class Base implements BaseUtils {
                 + "Created_At TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,"
                 + "PRIMARY KEY(ID))";
         stat.addBatch(sql);
-        stat.executeBatch();
+        sql="CREATE TABLE IF NOT EXISTS CARS_AVAILABLE("
+                + "TAGNO INT NOT NULL,"
+                + "MAKE VARCHAR(25) NOT NULL,"
+                + "MODEL VARCHAR(25) NOT NULL."
+                + "YEAR DATE NOT NULL,"
+                + "CATEGORY VARCHAR(25) NOT NULL,"
+                + "PRIMARY KEY(TAGNO))";
+        //stat.addBatch(sql);
+       // stat.executeBatch();
             
         }catch(SQLException ex){
             ex.printStackTrace();
