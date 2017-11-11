@@ -173,7 +173,6 @@ public  final class NewUserV extends javax.swing.JFrame {
 
     private void cmdSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdSubmitActionPerformed
 
-        this.dispose();
     }//GEN-LAST:event_cmdSubmitActionPerformed
 
     private void cmdCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdCancelActionPerformed

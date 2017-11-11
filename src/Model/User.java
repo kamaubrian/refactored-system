@@ -5,6 +5,8 @@
  */
 package Model;
 
+import java.sql.SQLException;
+
 /**
  *
  * @author Esperant
@@ -14,7 +16,7 @@ public class User extends Base{
     private String username;
     private String password;
     
-    public boolean addUser(String username,String password){
+    public boolean addUser(String username,String password) throws SQLException{
         boolean success = true;
         String sql;
         try{
@@ -28,7 +30,32 @@ public class User extends Base{
             
         }catch(Exception ex){
             ex.printStackTrace();
+        }finally{
+            closeConnection();
         }        
+        return success;
+    }
+    
+    public boolean lookUpUsername(String username) throws SQLException{
+        boolean success= true;
+        String sql;
+        try{
+            getConnection();
+            sql="SELECT * FROM USER WHERE Username=?";
+            pst=conn.prepareStatement(sql);
+            pst.setString(1,username);
+            rst=pst.executeQuery();
+            if(rst.next()){
+                System.out.println("Username Found");
+                success= true;
+            }
+            
+        }catch(Exception ex){
+            ex.printStackTrace();
+        }finally{
+            closeConnection();
+        }
+       
         return success;
     }
     
