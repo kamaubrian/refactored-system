@@ -19,6 +19,7 @@ import Model.*;
 public class NewUserController {
         static newAccountHandler accounts = new newAccountHandler();
         static NewUserV newUser = new NewUserV();
+        static LoginModel loginmodel = new LoginModel();
         static User usermodel = new User();
     
     
@@ -47,11 +48,12 @@ public class NewUserController {
                 return;
             }
             else{
-                if(usermodel.lookUpUsername(username)){
-                    usermodel.addUser(username, password);
-                }else{
-                    JOptionPane.showMessageDialog(newUser, "Username Already Exists");
-                }
+               if(loginmodel.getUsername(username).toLowerCase().isEmpty()){
+                   usermodel.addUser(username, password);
+                   JOptionPane.showMessageDialog(newUser,"User Added Successfully");
+               }else{
+                   JOptionPane.showMessageDialog(newUser, "Username Already Exists");
+               }
             }
                        
             
