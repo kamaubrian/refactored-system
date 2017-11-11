@@ -8,12 +8,15 @@ import View.*;
 import Model.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JFrame;
 import javax.swing.UnsupportedLookAndFeelException;
 import java.sql.*;
 import javax.swing.JOptionPane;
+import javax.swing.event.AncestorListener;
 
 /**
  *
@@ -22,8 +25,10 @@ import javax.swing.JOptionPane;
 
 public class Login {
     static LoginView loginview = new LoginView();
+    static NewUserV userview = new NewUserV();
     static loginHandler login = new loginHandler();
     static exitHandler exit = new exitHandler();
+    static showSignup signup = new showSignup();
     static LoginModel loginmodel = new LoginModel();
     
     
@@ -76,6 +81,33 @@ public class Login {
         }
         
     }
+ 
+    static class showSignup implements MouseListener{
+
+        @Override
+        public void mouseClicked(MouseEvent e) {
+            NewUserController.showPage();
+        }
+
+        @Override
+        public void mousePressed(MouseEvent e) {
+        }
+
+        @Override
+        public void mouseReleased(MouseEvent e) {
+        }
+
+        @Override
+        public void mouseEntered(MouseEvent e) {
+        }
+
+        @Override
+        public void mouseExited(MouseEvent e) {
+        }
+
+
+        
+    }
     
     static{
         try{
@@ -98,12 +130,14 @@ public class Login {
     }
     
     public static JFrame showPage(){
+        loginview.createAccount().addMouseListener(signup);
         loginview.exitSystem().addActionListener(exit);
         loginview.loginSystem().addActionListener(login);
         loginview.setVisible(true);
         return loginview;
        
     }
+    
     
     
     

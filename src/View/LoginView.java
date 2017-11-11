@@ -8,6 +8,7 @@ package View;
 
 import javax.swing.JButton;
 import javax.swing.JComboBox;
+import javax.swing.JLabel;
 import javax.swing.JTextField;
 
 
@@ -218,6 +219,9 @@ public final class LoginView extends javax.swing.JFrame {
     }
     public JButton exitSystem(){
         return btn_Exit;
+    }
+    public JLabel createAccount(){
+        return acc_create;
     }
     
 
