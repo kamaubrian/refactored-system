@@ -16,7 +16,7 @@ import static org.junit.Assert.*;
 
 /**
  *
- * @author brian-kamau
+ * @author Esperant
  */
 public class LoginModelTest {
     
@@ -50,7 +50,7 @@ public class LoginModelTest {
         String user = "Admin";
         LoginModel instance = new LoginModel();
         ArrayList<String> expResult = new ArrayList();
-        expResult.add("Admin");
+        expResult.add("admin");
         expResult.add("wamatu");
         ArrayList<String> result = instance.getAdmin(user);
         assertEquals(expResult,result);
@@ -64,9 +64,10 @@ public class LoginModelTest {
     public void testGetUsername() {
         System.out.println("getUsername");
         String user = "Admin";
+        String table = "customer";
         LoginModel instance = new LoginModel();
         String expResult = "Admin";
-        String result = instance.getUsername(user);
+        String result = instance.getUsername(table,user);
         assertEquals(expResult, result);
 
     }
@@ -78,9 +79,10 @@ public class LoginModelTest {
     public void testGetPassword() {
         System.out.println("getPassword");
         String pass = "wamatu";
+        String table = "customer";
         LoginModel instance = new LoginModel();
         String expResult = "wamatu";
-        String result = instance.getPassword(pass);
+        String result = instance.getPassword(table,pass);
         assertEquals(expResult, result);
     }
     

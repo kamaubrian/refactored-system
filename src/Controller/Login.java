@@ -40,8 +40,8 @@ public class Login {
             try{
                 String username = loginview.getUsername().getText();
                 String password = loginview.getPassword().getText();
-                String pass =loginmodel.getPassword(password);
-                String usern = loginmodel.getUsername(username);
+                //String pass =loginmodel.getPassword(password);
+             //   String usern = loginmodel.getUsername(username);
                 if(username.isEmpty()){
                     JOptionPane.showMessageDialog(loginview,"Please Enter Username");
                     return;
@@ -50,25 +50,34 @@ public class Login {
                     JOptionPane.showMessageDialog(loginview, "Please Enter Password");
                     return;
                 }
-                if(username.equals(usern) && password.equals(pass)){
+                if(loginview.verifyUser().getSelectedItem().toString().toLowerCase().equals("admin")){
+                    System.out.println("Logging in as Administrator");
+                    String table ="admin";
+                    if(loginmodel.getAdmin(username).get(0).equals(username) && loginmodel.getAdmin(username)
+                            .get(1).equals(password)){
+                        System.out.println("Welcome Admin");
+                    }else if(loginmodel.getAdmin(username).isEmpty()){
+                        System.out.println("Administrator not found, check Credentials");
+                    }
+                    
+                    
+                }else if(loginview.verifyUser().getSelectedItem().toString().toLowerCase().equals("customer")){
+                    String table="customer";
+                    if(username.equals(loginmodel.getUsername(table, username)) && password.equals(loginmodel.getPassword(table, password))){
                     System.out.println("Correct Credentials ");
                     RequestCar.showPage();
                     
                 }else{
                     System.out.println("Incorrect Password");
+                    System.out.println(loginmodel.getUsername("customer",username));
+                    System.out.println(loginmodel.getPassword("customer",password));
                     
                 }
+                    
+              
+                }
                 
-               /* if(!loginmodel.getAdmin(username).isEmpty()){
-                    usern = loginmodel.getAdmin(username).get(0);
-                    pass = loginmodel.getAdmin(username).get(1);
-                   if(pass.equals(password)){
-                       System.out.println("Correct Password");
-                   }else{
-                       System.out.println("Incorrect Password");
-                   } 
-                   
-                }*/
+
             }catch(Exception ex){
                 ex.printStackTrace();
             }

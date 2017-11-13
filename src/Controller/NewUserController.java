@@ -49,7 +49,8 @@ public class NewUserController {
                 return;
             }
             else{
-               if(loginmodel.getUsername(username).toLowerCase().isEmpty()){
+               String table ="customer";
+               if(loginmodel.getUsername(table,username).toLowerCase().isEmpty()){
                    usermodel.addUser(username, password);
                    JOptionPane.showMessageDialog(newUser,"User Added Successfully");
                }else{

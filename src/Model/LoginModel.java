@@ -11,7 +11,7 @@ import java.util.logging.Logger;
 
 /**
  *
- * @author brian-kamau
+ * @author Esperant
  */
 public class LoginModel extends Base {
     
@@ -21,7 +21,7 @@ public class LoginModel extends Base {
         String sql;
         try{
             getConnection();
-            sql="SELECT * FROM USER WHERE Username=?";
+            sql="SELECT * FROM ADMINS WHERE Username=?";
             pst=conn.prepareStatement(sql);
             pst.setString(1,user);
             rst=pst.executeQuery();
@@ -40,17 +40,37 @@ public class LoginModel extends Base {
         }      
         return credentials;
     }
-    public String getUsername(String user){
+    public String getUsername(String table,String user){
         String use="";
         String sql;
         try{
             getConnection();
-            sql="SELECT * FROM USER WHERE Username =?";
-            pst=conn.prepareStatement(sql);
-            pst.setString(1,user);
-            rst=pst.executeQuery();
-            if(rst.next()){
-                use=rst.getString("Username");
+            switch(table){
+                case "admin":
+                    sql="SELECT * FROM ADMINS WHERE Username=?";
+                    pst=conn.prepareStatement(sql);
+                    pst.setString(1,user);
+                    rst=pst.executeQuery();
+                    if(rst.next()){
+                        use=rst.getString("Username");
+                    }
+                    break;
+                    
+                case "customer":
+                    
+                    sql="SELECT * FROM USER WHERE Username=?";
+                    pst=conn.prepareStatement(sql);
+                    pst.setString(1,user);
+                    rst =pst.executeQuery();
+                    if(rst.next()){
+                        use=rst.getString("Username");
+                    }
+                    break;
+                    
+                default:
+                    System.out.println("Unsupported Operation Exception");
+                    break;
+                                       
             }
             
         }catch(Exception ex){
@@ -64,19 +84,37 @@ public class LoginModel extends Base {
         }       
         return use;
     }
-    public String getPassword(String pass){
+    public String getPassword(String table,String pass){
         String pas="";
         String sql;
         try{
             getConnection();
-            sql="SELECT * FROM USER WHERE Password =?";
-            pst=conn.prepareStatement(sql);
-            pst.setString(1,pass);
-            rst=pst.executeQuery();
-            if(rst.next()){
-                pas=rst.getString("Password");
-            }
-            
+           switch(table){
+                case "admin":
+                    sql="SELECT * FROM ADMINS WHERE Password=?";
+                    pst=conn.prepareStatement(sql);
+                    pst.setString(1,pass);
+                    rst=pst.executeQuery();
+                    if(rst.next()){
+                        pas=rst.getString("Password");
+                    }
+                    break;
+                    
+                case "customer":
+                    
+                    sql="SELECT * FROM USER WHERE Password=?";
+                    pst=conn.prepareStatement(sql);
+                    pst.setString(1,pass);
+                    rst =pst.executeQuery();
+                    if(rst.next()){
+                        pas=rst.getString("Password");
+                    }
+                    break;
+                    
+                default:
+                    System.out.println("Unsupported Operation Exception");
+                    break;                                       
+            }            
         }catch(Exception ex){
             ex.printStackTrace();
         }finally{
@@ -88,7 +126,4 @@ public class LoginModel extends Base {
         }
         return pas;
     }
-    
-    
-    
 }
