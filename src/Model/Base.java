@@ -58,6 +58,14 @@ public  abstract class Base implements BaseUtils {
                 + "YEAR DATE NOT NULL,"
                 + "CATEGORY VARCHAR(25) NOT NULL,"
                 + "PRIMARY KEY(TAGNO))";
+        
+        stat.addBatch(sql);
+        sql="CREATE TABLE IF NOT EXISTS ADMINS("
+                + "ID INT NOT NULL AUTO_INCREMENT,"
+                + "Username VARCHAR(25) NOT NULL,"
+                + "Password VARCHAR(15) NOT NULL,"
+                + "Created_At TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,"
+                + "PRIMARY KEY(ID))";
         stat.addBatch(sql);
         stat.executeBatch();
             
