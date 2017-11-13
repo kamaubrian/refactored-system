@@ -31,6 +31,7 @@ public class Login {
     static showSignup signup = new showSignup();
     static LoginModel loginmodel = new LoginModel();
     static RequestCar requestview = new RequestCar();
+    static AdminView adminview = new AdminView();
     static requestHandler request = new requestHandler();
     
     static class loginHandler implements ActionListener{
@@ -53,11 +54,15 @@ public class Login {
                 if(loginview.verifyUser().getSelectedItem().toString().toLowerCase().equals("admin")){
                     System.out.println("Logging in as Administrator");
                     String table ="admin";
-                    if(loginmodel.getAdmin(username).get(0).equals(username) && loginmodel.getAdmin(username)
-                            .get(1).equals(password)){
+                    if(loginmodel.getUsername(table,username).equals(username) && loginmodel.getPassword(table,password)
+                            .equals(password)){
                         System.out.println("Welcome Admin");
+                        adminController.showPage();
+                        
+                        
                     }else if(loginmodel.getAdmin(username).isEmpty()){
                         System.out.println("Administrator not found, check Credentials");
+                        JOptionPane.showMessageDialog(null,"Admin Not Found");
                     }
                     
                     
