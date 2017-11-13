@@ -14,7 +14,7 @@ import Model.*;
 
 /**
  *
- * @author brian-kamau
+ * @author Esperant
  */
 public class NewUserController {
         static newAccountHandler accounts = new newAccountHandler();

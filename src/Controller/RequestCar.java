@@ -4,7 +4,6 @@
  * and open the template in the editor.
  */
 package Controller;
-import Model.*;
 import javax.swing.JFrame;
 import View.*;
 /**
