@@ -14,9 +14,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JFrame;
 import javax.swing.UnsupportedLookAndFeelException;
-import java.sql.*;
 import javax.swing.JOptionPane;
-import javax.swing.event.AncestorListener;
 
 /**
  *
@@ -116,10 +114,7 @@ public class Login {
         @Override
         public void actionPerformed(ActionEvent e) {
             
-        }
-        
-        
-        
+        }        
     }
     
     static{
@@ -154,12 +149,6 @@ public class Login {
         loginview.setVisible(true);
         return loginview;
        
-    }
-    
-    
-    
-    
-    
-    
+    }        
 }
 

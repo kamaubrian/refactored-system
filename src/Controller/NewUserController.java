@@ -18,6 +18,7 @@ import Model.*;
  */
 public class NewUserController {
         static newAccountHandler accounts = new newAccountHandler();
+        static exitHandler exit = new exitHandler();
         static NewUserV newUser = new NewUserV();
         static LoginModel loginmodel = new LoginModel();
         static User usermodel = new User();
@@ -65,8 +66,25 @@ public class NewUserController {
         }
         
     }
+       static class exitHandler implements ActionListener{
+
+        @Override
+        public void actionPerformed(ActionEvent e){
+            try{
+                newUser.dispose();
+            }catch(Exception ex){
+                ex.printStackTrace();
+            }
+            
+            
+        }
+           
+           
+           
+       }
        
        public static JFrame showPage(){
+           newUser.exit().addActionListener(exit);
            newUser.signUp().addActionListener(accounts);
            newUser.setVisible(true);
            return newUser;

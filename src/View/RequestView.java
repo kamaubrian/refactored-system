@@ -283,7 +283,7 @@ public class RequestView extends javax.swing.JFrame {
             }
         });
 
-        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/availableCars/BMW-M6-001501.jpg"))); // NOI18N
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/availableCars/bmw.jpg"))); // NOI18N
         jLabel6.setToolTipText("");
         jLabel6.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
