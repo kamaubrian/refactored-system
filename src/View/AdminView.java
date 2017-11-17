@@ -1113,8 +1113,6 @@ public class AdminView extends javax.swing.JFrame {
 
         getContentPane().add(MiniFrame_Clients);
 
-        jLabel21.setText("jLabel21");
-
         javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
         jPanel11.setLayout(jPanel11Layout);
         jPanel11Layout.setHorizontalGroup(

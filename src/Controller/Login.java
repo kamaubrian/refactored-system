@@ -60,7 +60,7 @@ public class Login {
                         adminController.showPage();
                         
                         
-                    }else if(loginmodel.getAdmin(username).isEmpty()){
+                    }else{
                         System.out.println("Administrator not found, check Credentials");
                         JOptionPane.showMessageDialog(null,"Admin Not Found");
                     }
@@ -74,6 +74,7 @@ public class Login {
                     
                 }else{
                     System.out.println("Incorrect Password");
+                    JOptionPane.showMessageDialog(null,"User Not Found");
                     System.out.println(loginmodel.getUsername("customer",username));
                     System.out.println(loginmodel.getPassword("customer",password));
                     

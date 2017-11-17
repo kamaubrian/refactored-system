@@ -68,7 +68,7 @@ public  abstract class Base implements BaseUtils {
                 + "PRIMARY KEY(ID))";
         stat.addBatch(sql);
         stat.executeBatch();
-            
+        
         }catch(SQLException ex){
             ex.printStackTrace();
         }finally{
