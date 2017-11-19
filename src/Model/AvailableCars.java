@@ -39,7 +39,42 @@ public class AvailableCars extends Base {
             }
         }        
         return path;
-    } 
+    }
+    public ArrayList<String> getCarExists(String model,String make){
+        String sql;
+        ArrayList<String> carfound = new ArrayList();
+        try{
+            getConnection();
+            sql="SELECT * FROM CARS_AVAILABLE WHERE Model =? AND Make=?";
+            pst=conn.prepareStatement(sql);
+            pst.setString(1,model);
+            pst.setString(2,make);
+            rst=pst.executeQuery();
+            if(rst.next()){
+                carfound.add(rst.getString("TAGNO"));
+                carfound.add(rst.getString("CATEGORY"));
+                carfound.add(rst.getString("MAKE"));
+                carfound.add(rst.getString("MODEL"));
+                carfound.add(rst.getString("YEAR"));
+            }else{
+                
+            }
+            
+        }catch(Exception ex){
+            ex.printStackTrace();
+        }finally{
+            try {
+                closeConnection();
+            } catch (SQLException ex) {
+                Logger.getLogger(AvailableCars.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        
+        return carfound;
+    }
+    public boolean findCarExists(String model,String make){
+        return !getCarExists(model,make).isEmpty();
+    }
     
     
 }

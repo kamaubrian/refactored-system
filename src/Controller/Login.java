@@ -22,6 +22,19 @@ import javax.swing.JOptionPane;
  */
 
 public class Login {
+        static{
+        try{
+            for(javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()){
+                if("Nimbus".equals(info.getName())){
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        }catch(ClassNotFoundException | InstantiationException | IllegalAccessException | UnsupportedLookAndFeelException ex){
+            Logger.getLogger(Login.class.getName()).log(Level.SEVERE,null,ex);
+        }
+    
+    }
     
     
     static LoginView loginview = new LoginView();
@@ -132,19 +145,7 @@ public class Login {
         }        
     }
     
-    static{
-        try{
-            for(javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()){
-                if("Nimbus".equals(info.getName())){
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        }catch(ClassNotFoundException | InstantiationException | IllegalAccessException | UnsupportedLookAndFeelException ex){
-            Logger.getLogger(Login.class.getName()).log(Level.SEVERE,null,ex);
-        }
-    
-    }
+
     /**
      * @param args the command line arguments
      */

@@ -52,5 +52,16 @@ public class AvailableCarsTest {
         assertEquals(expResult, result);
 
     }
+    @Test
+    public void testGetAvailableCars(){
+        System.out.println("Finding whether a car is available");
+        String model = "X5";
+        String make="BMW";
+        AvailableCars instance = new AvailableCars();
+       // instance.getCarExists(model, make);
+        boolean expectedResult = true;
+        boolean result = instance.findCarExists(model, make);
+        
+    }
     
 }
