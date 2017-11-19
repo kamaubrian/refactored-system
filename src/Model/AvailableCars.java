@@ -56,6 +56,7 @@ public class AvailableCars extends Base {
                 carfound.add(rst.getString("MAKE"));
                 carfound.add(rst.getString("MODEL"));
                 carfound.add(rst.getString("YEAR"));
+                carfound.add(rst.getString("Resource_Path"));
             }else{
                 
             }

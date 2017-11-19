@@ -8,7 +8,9 @@ import javax.swing.JFrame;
 import View.*;
 import java.awt.event.ActionEvent;
 import Model.*;
+import java.awt.Image;
 import java.awt.event.ActionListener;
+import javax.swing.JOptionPane;
 /**
  *
  * @author Esperant
@@ -25,12 +27,25 @@ public class RequestCar {
             try{
                 String model = request.getModel().getText();
                 String make = request.getMake().getSelectedItem().toString();
+                if(!model.isEmpty()){
                 if(carsmodel.findCarExists(model, make)){
-                    System.out.println("Car is Found");
+                    
+                    carsmodel.getCarExists(model, make);
+                    request.getTagNo().setText(carsmodel.getCarExists(model, make).get(0));
+                    request.getCategory().setText(carsmodel.getCarExists(model, make).get(1));
+                    request.getMaker().setText(make);
+                    request.getModeler().setText(model);
+                    request.getYear().setText(carsmodel.getCarExists(model, make).get(4));
+                
+                
                 }else{
                     System.out.println("Car Not Found");
+                    JOptionPane.showMessageDialog(request, "Car Not Found");
                 }
-                
+                }else{
+                    JOptionPane.showMessageDialog(request,"Enter Car Model");
+                    return;
+                }
                 
                 
                 
