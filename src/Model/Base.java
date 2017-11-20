@@ -46,9 +46,15 @@ public  abstract class Base implements BaseUtils {
         getConnection();
         stat = conn.createStatement();
         sql ="CREATE TABLE IF NOT EXISTS USER(ID INT NOT NULL AUTO_INCREMENT,"
+                + "ID_PASSPORT VARCHAR(15) NOT NULL,"
+                + "FirstName VARCHAR(25) NOT NULL,"
+                + "LastName VARCHAR(16) NOT NULL,"
                 + "Username VARCHAR(25) NOT NULL,"
                 + "Password VARCHAR(16) NOT NULL,"
+                + "Phone VARCHAR(25) NOT NULL,"
                 + "Created_At TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,"
+                + "UNIQUE(Username),"
+                + "UNIQUE(ID_PASSPORT),"
                 + "PRIMARY KEY(ID))";
         stat.addBatch(sql);
         sql="CREATE TABLE IF NOT EXISTS CARS_AVAILABLE("

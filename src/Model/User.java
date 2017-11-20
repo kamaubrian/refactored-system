@@ -16,15 +16,20 @@ public class User extends Base{
     private String username;
     private String password;
     
-    public boolean addUser(String username,String password) throws SQLException{
+    public boolean addUser(String passport,String firstname,String lastname,
+            String username,String phone,String password) throws SQLException{
         boolean success = true;
         String sql;
         try{
             getConnection();
-            sql="INSERT INTO USER(Username,Password) VALUES(?,?)";
+            sql="INSERT INTO USER(ID_PASSPORT,FirstName,LastName,Username,Phone,Password) VALUES(?,?,?,?,?,?)";
             pst=conn.prepareStatement(sql);
-            pst.setString(1,username);
-            pst.setString(2,password);
+            pst.setString(1,passport);
+            pst.setString(2,firstname);
+            pst.setString(3,lastname);
+            pst.setString(4,username);
+            pst.setString(5,phone);
+            pst.setString(6,password);
             pst.executeUpdate();
             success=true;
             

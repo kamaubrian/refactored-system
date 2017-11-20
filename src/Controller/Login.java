@@ -44,6 +44,7 @@ public class Login {
     static showSignup signup = new showSignup();
     static LoginModel loginmodel = new LoginModel();
     static RequestCar requestview = new RequestCar();
+    static RequestView requestv = new RequestView();
     static AdminView adminview = new AdminView();
     static requestHandler request = new requestHandler();
     
@@ -84,6 +85,8 @@ public class Login {
                     if(username.equals(loginmodel.getUsername(table, username)) && password.equals(loginmodel.getPassword(table, password))){
                     System.out.println("Correct Credentials ");
                     RequestCar.showPage();
+                   // requestv.getCustomername().setText(username);
+                    
                     
                 }else{
                     System.out.println("Incorrect Password");

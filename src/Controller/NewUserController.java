@@ -22,6 +22,7 @@ public class NewUserController {
         static NewUserV newUser = new NewUserV();
         static LoginModel loginmodel = new LoginModel();
         static User usermodel = new User();
+        
     
     
     
@@ -30,11 +31,32 @@ public class NewUserController {
         @Override
         public void actionPerformed(ActionEvent e) {
             try{
+            String passport = newUser.getPassport().getText();
+            String firstname = newUser.getFirstName().getText();
+            String lastname = newUser.getLastName().getText();
             String username = newUser.getUsername().getText();
+            String phone = newUser.getPhone().getText();
             String password = newUser.getPassword().getText();
             String c_Password=newUser.getPassword2().getText();
+            if(passport.isEmpty()){
+                JOptionPane.showMessageDialog(newUser,"Enter Passport Number");
+                return;
+            }
+            if(firstname.isEmpty()){
+                JOptionPane.showMessageDialog(newUser,"Enter First Name");
+                return;
+            }
+            if(lastname.isEmpty()){
+                JOptionPane.showMessageDialog(newUser,"Enter Last Name");
+                return;
+            }
+            
             if(username.isEmpty()){
                 JOptionPane.showMessageDialog(newUser, "Enter Username");
+                return;
+            }
+            if(phone.isEmpty()){
+                JOptionPane.showMessageDialog(newUser,"Enter Phone Number");
                 return;
             }
             if(password.isEmpty()){
@@ -51,10 +73,15 @@ public class NewUserController {
             else{
                String table ="customer";
                if(loginmodel.getUsername(table,username).toLowerCase().isEmpty()){
-                   usermodel.addUser(username, password);
+                   usermodel.addUser(passport,firstname,lastname,username,phone,password);
+                   
                    JOptionPane.showMessageDialog(newUser,"User Added Successfully");
+                   clear();
+                   newUser.dispose();
+                   
                }else{
                    JOptionPane.showMessageDialog(newUser, "Username Already Exists");
+                   clear();
                }
             }
                        
@@ -89,5 +116,14 @@ public class NewUserController {
            newUser.signUp().addActionListener(accounts);
            newUser.setVisible(true);
            return newUser;
+       }
+       public static void clear(){
+           newUser.getFirstName().setText("");
+           newUser.getUsername().setText("");
+           newUser.getLastName().setText("");
+           newUser.getPassport().setText("");
+           newUser.getPassword2().setText("");
+           newUser.getPassword().setText("");
+           newUser.getPhone().setText("");
        }
 }

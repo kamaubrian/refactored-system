@@ -36,7 +36,7 @@ public class RequestCar {
                     request.getMaker().setText(make);
                     request.getModeler().setText(model);
                     request.getYear().setText(carsmodel.getCarExists(model, make).get(4));
-                
+                   
                 
                 }else{
                     System.out.println("Car Not Found");
@@ -64,6 +64,7 @@ public class RequestCar {
     
     
     public static JFrame showPage(){
+        
         request.setVisible(true);
         request.searchCar().addActionListener(searchcar);
         return request;
