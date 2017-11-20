@@ -18,9 +18,22 @@ import javax.swing.JOptionPane;
 public class RequestCar {
     static RequestView request = new RequestView();
     static searchHandler searchcar = new searchHandler();
+    static DepositHandler deposit = new DepositHandler();
     static AvailableCars carsmodel = new AvailableCars();
     static Login login = new Login();
+    static Deposits depo = new Deposits();
     
+    
+    static class DepositHandler implements ActionListener{
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            depo.showPage();
+        }
+        
+        
+        
+    }
     static class searchHandler implements ActionListener{
 
         @Override
@@ -75,6 +88,7 @@ public class RequestCar {
         request.getUsername().setText(Login.details.get(2));
         request.setVisible(true);
         request.searchCar().addActionListener(searchcar);
+        request.getDeposit().addActionListener(deposit);
         return request;
     }
     

@@ -83,10 +83,7 @@ public class NewUserController {
                    JOptionPane.showMessageDialog(newUser, "Username Already Exists");
                    clear();
                }
-            }
-                       
-            
-            
+            }           
             }catch(Exception ex){
                 ex.printStackTrace();
             }

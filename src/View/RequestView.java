@@ -95,7 +95,7 @@ public class RequestView extends javax.swing.JFrame {
         txtCreditBalance = new javax.swing.JTextField();
         jLabel22 = new javax.swing.JLabel();
         txtDescription = new javax.swing.JTextField();
-        jButton2 = new javax.swing.JButton();
+        getDeposit = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new javax.swing.OverlayLayout(getContentPane()));
@@ -451,8 +451,8 @@ public class RequestView extends javax.swing.JFrame {
         jLabel22.setFont(new java.awt.Font("Ubuntu", 1, 13)); // NOI18N
         jLabel22.setText(" Subscription");
 
-        jButton2.setFont(new java.awt.Font("Ubuntu", 1, 13)); // NOI18N
-        jButton2.setText("Make Deposit");
+        getDeposit.setFont(new java.awt.Font("Ubuntu", 1, 13)); // NOI18N
+        getDeposit.setText("Make Deposit");
 
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
         jPanel7.setLayout(jPanel7Layout);
@@ -474,7 +474,7 @@ public class RequestView extends javax.swing.JFrame {
                         .addComponent(txt_Acc)
                         .addComponent(txtCreditBalance)
                         .addComponent(txtDescription, javax.swing.GroupLayout.DEFAULT_SIZE, 159, Short.MAX_VALUE))
-                    .addComponent(jButton2))
+                    .addComponent(getDeposit))
                 .addContainerGap())
         );
         jPanel7Layout.setVerticalGroup(
@@ -495,7 +495,7 @@ public class RequestView extends javax.swing.JFrame {
                     .addComponent(jLabel22, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtDescription, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(getDeposit, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGap(6, 6, 6))
         );
 
@@ -663,6 +663,9 @@ public class RequestView extends javax.swing.JFrame {
     public JTextField getUsername(){
         return username;
     }
+    public JButton getDeposit(){
+        return getDeposit;
+    }
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -670,9 +673,9 @@ public class RequestView extends javax.swing.JFrame {
     private javax.swing.JInternalFrame MiniFrameTicket;
     private javax.swing.JButton btnSearch;
     private javax.swing.JTextField customer_Name;
+    private javax.swing.JButton getDeposit;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton10;
-    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
