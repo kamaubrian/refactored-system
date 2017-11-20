@@ -35,9 +35,14 @@ public class RequestCar {
                     request.getTagNo().setText(carsmodel.getCarExists(model, make).get(0));
                     request.getCategory().setText(carsmodel.getCarExists(model, make).get(1));
                     request.getMaker().setText(make);
+                    
                     request.getModeler().setText(model);
                     request.getYear().setText(carsmodel.getCarExists(model, make).get(4));
-                   
+                    request.getMaker().setEditable(false);
+                    request.getTagNo().setEditable(false);
+                    request.getCategory().setEditable(false);
+                    request.getModeler().setEditable(false);
+                    request.getYear().setEditable(false);
                     
                 }else{
                     System.out.println("Car Not Found");
@@ -65,9 +70,9 @@ public class RequestCar {
     
     
     public static JFrame showPage(){
-        request.getCustomername().setText(login.details.get(0));
-        request.getPassport().setText(login.details.get(1));
-        request.getUsername().setText(login.details.get(2));
+        request.getCustomername().setText(Login.details.get(0));
+        request.getPassport().setText(Login.details.get(1));
+        request.getUsername().setText(Login.details.get(2));
         request.setVisible(true);
         request.searchCar().addActionListener(searchcar);
         return request;

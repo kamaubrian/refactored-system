@@ -73,6 +73,16 @@ public  abstract class Base implements BaseUtils {
                 + "Created_At TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,"
                 + "PRIMARY KEY(ID))";
         stat.addBatch(sql);
+        sql="CREATE TABLE IF NOT EXISTS ACCOUNT("
+                + "ACC_NO INT NOT NULL REFERENCES USER(ID),"
+                + "Username varchar(25) NOT NULL REFERENCES USER(Username),"
+                + "Credit_Balance INT NOT NULL,"
+                + "Subscription VARCHAR(25) NOT NULL,"
+                + "Created_At TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,"
+                + "PRIMARY KEY(ACC_NO))";
+        stat.addBatch(sql);
+        sql="";
+        
         stat.executeBatch();
         
         }catch(SQLException ex){
