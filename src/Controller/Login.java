@@ -10,6 +10,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JFrame;
@@ -36,7 +37,8 @@ public class Login {
     
     }
     
-    
+  public static ArrayList<String> details;    
+    static User usermodel = new User(); 
     static LoginView loginview = new LoginView();
     static NewUserV userview = new NewUserV();
     static loginHandler login = new loginHandler();
@@ -84,6 +86,7 @@ public class Login {
                     String table="customer";
                     if(username.equals(loginmodel.getUsername(table, username)) && password.equals(loginmodel.getPassword(table, password))){
                     System.out.println("Correct Credentials ");
+                    details = usermodel.getRequestDetails(username);
                     RequestCar.showPage();
                    // requestv.getCustomername().setText(username);
                     
@@ -168,6 +171,7 @@ public class Login {
         loginview.setVisible(true);
         return loginview;
        
-    }        
+    }
+ 
 }
 

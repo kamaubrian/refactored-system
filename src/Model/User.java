@@ -6,6 +6,7 @@
 package Model;
 
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 /**
  *
@@ -62,6 +63,31 @@ public class User extends Base{
         }
        
         return success;
+    }
+       public ArrayList<String> getRequestDetails(String username)throws SQLException{
+        ArrayList<String> userdetails = new ArrayList();
+        String sql;
+        try{
+            getConnection();
+            sql="SELECT * FROM USER WHERE Username =?";
+            pst=conn.prepareStatement(sql);
+            pst.setString(1, username);
+            rst=pst.executeQuery();
+            if(rst.next()){
+                userdetails.add(rst.getString("FirstName"));
+                userdetails.add(rst.getString("ID_PASSPORT"));
+                userdetails.add(rst.getString("Username"));
+                
+            }
+            
+        }catch(Exception ex){
+            ex.printStackTrace();
+        }finally{
+            closeConnection();
+        }
+        return userdetails;
+        
+        
     }
     
     

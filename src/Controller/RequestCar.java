@@ -19,6 +19,7 @@ public class RequestCar {
     static RequestView request = new RequestView();
     static searchHandler searchcar = new searchHandler();
     static AvailableCars carsmodel = new AvailableCars();
+    static Login login = new Login();
     
     static class searchHandler implements ActionListener{
 
@@ -37,7 +38,7 @@ public class RequestCar {
                     request.getModeler().setText(model);
                     request.getYear().setText(carsmodel.getCarExists(model, make).get(4));
                    
-                
+                    
                 }else{
                     System.out.println("Car Not Found");
                     JOptionPane.showMessageDialog(request, "Car Not Found");
@@ -64,7 +65,9 @@ public class RequestCar {
     
     
     public static JFrame showPage(){
-        
+        request.getCustomername().setText(login.details.get(0));
+        request.getPassport().setText(login.details.get(1));
+        request.getUsername().setText(login.details.get(2));
         request.setVisible(true);
         request.searchCar().addActionListener(searchcar);
         return request;
