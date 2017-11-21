@@ -63,6 +63,8 @@ public  abstract class Base implements BaseUtils {
                 + "MODEL VARCHAR(25) NOT NULL,"
                 + "YEAR DATE NOT NULL,"
                 + "CATEGORY VARCHAR(25) NOT NULL,"
+                + "PRICE_PERHOUR INT NOT NULL,"
+                + "Created_At TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,"
                 + "PRIMARY KEY(TAGNO))";
         
         stat.addBatch(sql);

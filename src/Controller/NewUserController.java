@@ -9,6 +9,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JFrame;
 import View.*;
+import java.util.List;
 import javax.swing.JOptionPane;
 import Model.*;
 
@@ -22,7 +23,19 @@ public class NewUserController {
         static NewUserV newUser = new NewUserV();
         static LoginModel loginmodel = new LoginModel();
         static User usermodel = new User();
+        static SetupAccount setAccount = new SetupAccount();
+        static FinanceHandler finance = new FinanceHandler();
+        public static List<Object> details;
         
+        static class FinanceHandler implements ActionListener{
+        @Override
+        public void actionPerformed(ActionEvent e){
+            
+            
+            
+        }
+            
+        }
     
     
     
@@ -76,8 +89,9 @@ public class NewUserController {
                    usermodel.addUser(passport,firstname,lastname,username,phone,password);
                    
                    JOptionPane.showMessageDialog(newUser,"User Added Successfully");
-                   clear();
-                   newUser.dispose();
+                  // clear();
+                   //newUser.dispose();
+                   showAccountPage();
                    
                }else{
                    JOptionPane.showMessageDialog(newUser, "Username Already Exists");
@@ -122,5 +136,18 @@ public class NewUserController {
            newUser.getPassword2().setText("");
            newUser.getPassword().setText("");
            newUser.getPhone().setText("");
+       }
+       public static JFrame showAccountPage(){
+           try{
+           setAccount.setLocationRelativeTo(null);
+           setAccount.activateAccount().addActionListener(finance);
+           setAccount.setVisible(true);
+           setAccount.getUsername().setText(newUser.getUsername().getText());
+           setAccount.getAccountNumber().setText(usermodel.getIDDetails(newUser.getUsername().getText()).get(0).toString());
+           setAccount.getAccountNumber().setText(details.toString());
+           }catch(Exception ex){
+               
+           }
+           return setAccount;
        }
 }
