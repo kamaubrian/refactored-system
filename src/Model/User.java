@@ -131,7 +131,8 @@ public class User extends Base{
            }
            return details;
        }
-       
+       public boolean addAccount(int account,String username,int credit,String subscription) throws SQLException{
+           return true;
+       } 
 
-    
 }

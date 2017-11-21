@@ -146,7 +146,7 @@ public class NewUserController {
            setAccount.getAccountNumber().setText(usermodel.getIDDetails(newUser.getUsername().getText()).get(0).toString());
            setAccount.getAccountNumber().setText(details.toString());
            }catch(Exception ex){
-               
+               ex.printStackTrace();
            }
            return setAccount;
        }
