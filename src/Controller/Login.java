@@ -37,7 +37,7 @@ public class Login {
     
     }
     
-  public static ArrayList<String> details;    
+    public static ArrayList<String> details;
     static User usermodel = new User(); 
     static LoginView loginview = new LoginView();
     static NewUserV userview = new NewUserV();

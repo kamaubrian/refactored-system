@@ -270,7 +270,7 @@ public class RequestView extends javax.swing.JFrame {
             MiniFrameTicketLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, MiniFrameTicketLayout.createSequentialGroup()
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 224, Short.MAX_VALUE))
+                .addGap(0, 233, Short.MAX_VALUE))
         );
 
         getContentPane().add(MiniFrameTicket);
@@ -445,11 +445,17 @@ public class RequestView extends javax.swing.JFrame {
         jLabel19.setFont(new java.awt.Font("Ubuntu", 1, 13)); // NOI18N
         jLabel19.setText("Acc Number");
 
+        txt_Acc.setFont(new java.awt.Font("Ubuntu", 1, 13)); // NOI18N
+
         jLabel20.setFont(new java.awt.Font("Ubuntu", 1, 13)); // NOI18N
         jLabel20.setText("Credit Balance");
 
+        txtCreditBalance.setFont(new java.awt.Font("Ubuntu", 1, 13)); // NOI18N
+
         jLabel22.setFont(new java.awt.Font("Ubuntu", 1, 13)); // NOI18N
         jLabel22.setText(" Subscription");
+
+        txtDescription.setFont(new java.awt.Font("Ubuntu", 1, 13)); // NOI18N
 
         getDeposit.setFont(new java.awt.Font("Ubuntu", 1, 13)); // NOI18N
         getDeposit.setText("Make Deposit");
@@ -665,6 +671,15 @@ public class RequestView extends javax.swing.JFrame {
     }
     public JButton getDeposit(){
         return getDeposit;
+    }
+    public JTextField getAccount(){
+        return txt_Acc;
+    }
+    public JTextField getCreditBalance(){
+        return txtCreditBalance;
+    }
+    public JTextField getSubscription(){
+        return txtDescription;
     }
 
 

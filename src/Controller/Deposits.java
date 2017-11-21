@@ -45,6 +45,7 @@ public class Deposits {
     }
     
     public JFrame showPage(){
+        deposit.setResizable(false);
         deposit.setLocationRelativeTo(null);
         deposit.setVisible(true);
         deposit.getDeposit().addActionListener(depositHandler);

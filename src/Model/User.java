@@ -7,6 +7,7 @@ package Model;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
@@ -86,9 +87,30 @@ public class User extends Base{
             closeConnection();
         }
         return userdetails;
-        
-        
+               
     }
-    
+       public List<Object> getSubscriptionDetails(String username) throws SQLException{
+          String sql;
+          List<Object> subscription = new ArrayList();
+           try{
+               getConnection();
+               sql="SELECT * FROM ACCOUNT WHERE Username=?";
+               pst=conn.prepareStatement(sql);
+               pst.setString(1, username);
+               rst=pst.executeQuery();
+               if(rst.next()){
+                   subscription.add(rst.getInt("ACC_NO"));
+                   subscription.add(rst.getString("Credit_Balance"));
+                   subscription.add(rst.getString("Subscription"));
+               }
+               
+           }catch(Exception ex){
+               ex.printStackTrace();
+           }finally{
+               closeConnection();
+           }
+           return subscription;
+       }
+
     
 }
