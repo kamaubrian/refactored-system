@@ -30,7 +30,20 @@ public class NewUserController {
         static class FinanceHandler implements ActionListener{
         @Override
         public void actionPerformed(ActionEvent e){
-            
+            try{
+                String username = setAccount.getUsername().getText();
+                int acc_number= (int)usermodel.getIDDetails(username).get(0);
+                int initial_credit = (int)setAccount.getInitialAmount().getValue();
+                String subscription = setAccount.getSubscription().getSelectedItem().toString();
+                if(usermodel.addAccount(acc_number, username, initial_credit, subscription)){
+                    JOptionPane.showMessageDialog(setAccount, "Account Saved Success");
+                    
+                }else{
+                    JOptionPane.showMessageDialog(setAccount, "Failed to Activate Account");
+                }
+            }catch(Exception ex){
+                ex.printStackTrace();
+            }
             
             
         }
@@ -144,7 +157,6 @@ public class NewUserController {
            setAccount.setVisible(true);
            setAccount.getUsername().setText(newUser.getUsername().getText());
            setAccount.getAccountNumber().setText(usermodel.getIDDetails(newUser.getUsername().getText()).get(0).toString());
-           setAccount.getAccountNumber().setText(details.toString());
            }catch(Exception ex){
                ex.printStackTrace();
            }

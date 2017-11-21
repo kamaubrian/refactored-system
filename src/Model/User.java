@@ -132,6 +132,23 @@ public class User extends Base{
            return details;
        }
        public boolean addAccount(int account,String username,int credit,String subscription) throws SQLException{
+           String sql;
+           try{
+               getConnection();
+               sql="INSERT INTO ACCOUNT(ACC_NO,Username,Credit_Balance,Subscription) VALUES(?,?,?,?)";
+               pst = conn.prepareStatement(sql);
+               pst.setInt(1, account);
+               pst.setString(2, username);
+               pst.setInt(3,credit);
+               pst.setString(4,subscription);
+               pst.executeUpdate();
+           }catch(Exception ex){
+               ex.printStackTrace();
+           }finally{
+               closeConnection();
+           }
+           
+           
            return true;
        } 
 
