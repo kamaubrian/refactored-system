@@ -58,12 +58,13 @@ public  abstract class Base implements BaseUtils {
                 + "PRIMARY KEY(ID))";
         stat.addBatch(sql);
         sql="CREATE TABLE IF NOT EXISTS CARS_AVAILABLE("
-                + "TAGNO INT NOT NULL,"
+                + "TAGNO INT NOT NULL AUTO_INCREMENT,"
                 + "MAKE VARCHAR(25) NOT NULL,"
                 + "MODEL VARCHAR(25) NOT NULL,"
                 + "YEAR DATE NOT NULL,"
                 + "CATEGORY VARCHAR(25) NOT NULL,"
                 + "PRICE_PERHOUR INT NOT NULL,"
+                + "Resource_Path VARCHAR(45) NOT NULL,"
                 + "Created_At TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,"
                 + "PRIMARY KEY(TAGNO))";
         

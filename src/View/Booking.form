@@ -127,7 +127,7 @@
                       <Component id="btnGeneratePrice" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="btnCompleteBooking" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace min="0" pref="78" max="32767" attributes="0"/>
+                  <EmptySpace min="0" pref="20" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
