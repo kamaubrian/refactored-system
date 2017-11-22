@@ -83,7 +83,17 @@ public  abstract class Base implements BaseUtils {
                 + "Created_At TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,"
                 + "PRIMARY KEY(ACC_NO))";
         stat.addBatch(sql);
-        sql="";
+        sql="CREATE TABLE IF NOT EXISTS BOOKING("
+                + "ID INT NOT NULL AUTO_INCREMENT,"
+                + "USERNAME VARCHAR(25) NOT NULL REFERENCES USER(Username),"
+                + "MAKE VARCHAR(25) NOT NULL REFERENCES CARS_AVAILABLE(MAKE),"
+                + "MODEL VARCHAR(25) NOT NULL REFERENCES CARS_AVAILABLE(MODEL),"
+                + "PRICE_HOURLY INT NOT NULL REFERENCES CARS_AVAILABLE(PRICE_PERHOUR),"
+                + "HOURS_BOOKED INT NOT NULL,"
+                + "TOTAL_PRICE INT NOT NULL,"
+                + "Created_At TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,"
+                + "PRIMARY KEY(ID))";
+        stat.addBatch(sql);
         
         stat.executeBatch();
         

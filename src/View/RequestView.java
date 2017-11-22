@@ -264,13 +264,13 @@ public class RequestView extends javax.swing.JFrame {
             .addGroup(MiniFrameTicketLayout.createSequentialGroup()
                 .addGap(78, 78, 78)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(183, Short.MAX_VALUE))
+                .addContainerGap(195, Short.MAX_VALUE))
         );
         MiniFrameTicketLayout.setVerticalGroup(
             MiniFrameTicketLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, MiniFrameTicketLayout.createSequentialGroup()
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 233, Short.MAX_VALUE))
+                .addGap(0, 257, Short.MAX_VALUE))
         );
 
         getContentPane().add(MiniFrameTicket);
@@ -341,7 +341,7 @@ public class RequestView extends javax.swing.JFrame {
                     .addComponent(searchMake)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
                         .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 20, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(btnSearch, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(modelCombo, 0, 102, Short.MAX_VALUE))))
@@ -446,16 +446,19 @@ public class RequestView extends javax.swing.JFrame {
         jLabel19.setText("Acc Number");
 
         txt_Acc.setFont(new java.awt.Font("Ubuntu", 1, 13)); // NOI18N
+        txt_Acc.setEnabled(false);
 
         jLabel20.setFont(new java.awt.Font("Ubuntu", 1, 13)); // NOI18N
         jLabel20.setText("Credit Balance");
 
         txtCreditBalance.setFont(new java.awt.Font("Ubuntu", 1, 13)); // NOI18N
+        txtCreditBalance.setEnabled(false);
 
         jLabel22.setFont(new java.awt.Font("Ubuntu", 1, 13)); // NOI18N
         jLabel22.setText(" Subscription");
 
         txtDescription.setFont(new java.awt.Font("Ubuntu", 1, 13)); // NOI18N
+        txtDescription.setEnabled(false);
 
         getDeposit.setFont(new java.awt.Font("Ubuntu", 1, 13)); // NOI18N
         getDeposit.setText("Make Deposit");
