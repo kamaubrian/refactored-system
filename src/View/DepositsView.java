@@ -12,7 +12,7 @@ import javax.swing.JTextField;
 
 /**
  *
- * @author brian-kamau
+ * @author Esperant
  */
 public class DepositsView extends javax.swing.JFrame {
 

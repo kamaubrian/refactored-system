@@ -7,7 +7,7 @@ package View;
 import javax.swing.*;
 /**
  *
- * @author brian-kamau
+ * @author Esperant
  */
 public class Booking extends javax.swing.JFrame {
 
