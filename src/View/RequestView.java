@@ -69,7 +69,7 @@ public class RequestView extends javax.swing.JFrame {
         txtCategory = new javax.swing.JTextField();
         jButton5 = new javax.swing.JButton();
         jButton6 = new javax.swing.JButton();
-        jButton7 = new javax.swing.JButton();
+        btnViewBooking = new javax.swing.JButton();
         lblCar = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         lblSearch = new javax.swing.JLabel();
@@ -303,11 +303,12 @@ public class RequestView extends javax.swing.JFrame {
         jButton6.setFont(new java.awt.Font("Lucida Calligraphy", 1, 10)); // NOI18N
         jButton6.setText("<<");
 
-        jButton7.setFont(new java.awt.Font("Lucida Calligraphy", 1, 10)); // NOI18N
-        jButton7.setText("Select");
-        jButton7.addMouseListener(new java.awt.event.MouseAdapter() {
+        btnViewBooking.setFont(new java.awt.Font("Ubuntu", 1, 10)); // NOI18N
+        btnViewBooking.setText("Select");
+        btnViewBooking.setEnabled(false);
+        btnViewBooking.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton7MouseClicked(evt);
+                btnViewBookingMouseClicked(evt);
             }
         });
 
@@ -562,7 +563,7 @@ public class RequestView extends javax.swing.JFrame {
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(lblCar, javax.swing.GroupLayout.PREFERRED_SIZE, 446, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(btnViewBooking, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(jButton6)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -599,7 +600,7 @@ public class RequestView extends javax.swing.JFrame {
                             .addComponent(jLabel3))))
                 .addGap(20, 20, 20)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton7)
+                    .addComponent(btnViewBooking)
                     .addComponent(jButton5)
                     .addComponent(jButton6))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -624,9 +625,9 @@ public class RequestView extends javax.swing.JFrame {
        
     }//GEN-LAST:event_jButton10MouseClicked
 
-    private void jButton7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton7MouseClicked
+    private void btnViewBookingMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnViewBookingMouseClicked
 
-    }//GEN-LAST:event_jButton7MouseClicked
+    }//GEN-LAST:event_btnViewBookingMouseClicked
 
     private void txtCategoryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCategoryActionPerformed
         // TODO add your handling code here:
@@ -684,19 +685,22 @@ public class RequestView extends javax.swing.JFrame {
     public JTextField getSubscription(){
         return txtDescription;
     }
+    public JButton getBookingView(){
+        return btnViewBooking;
+    }
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Current_time;
     private javax.swing.JInternalFrame MiniFrameTicket;
     private javax.swing.JButton btnSearch;
+    private javax.swing.JButton btnViewBooking;
     private javax.swing.JTextField customer_Name;
     private javax.swing.JButton getDeposit;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
     private javax.swing.JComboBox jComboBox1;
     private javax.swing.JComboBox jComboBox2;

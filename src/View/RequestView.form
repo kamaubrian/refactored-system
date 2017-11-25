@@ -345,7 +345,7 @@
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
                               <Component id="lblCar" min="-2" pref="446" max="-2" attributes="0"/>
                               <Group type="102" alignment="0" attributes="0">
-                                  <Component id="jButton7" min="-2" pref="133" max="-2" attributes="0"/>
+                                  <Component id="btnViewBooking" min="-2" pref="133" max="-2" attributes="0"/>
                                   <EmptySpace max="32767" attributes="0"/>
                                   <Component id="jButton6" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
@@ -395,7 +395,7 @@
                   </Group>
                   <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jButton7" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnViewBooking" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jButton5" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jButton6" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
@@ -477,15 +477,16 @@
             <Property name="text" type="java.lang.String" value="&lt;&lt;"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="jButton7">
+        <Component class="javax.swing.JButton" name="btnViewBooking">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Lucida Calligraphy" size="10" style="1"/>
+              <Font name="Ubuntu" size="10" style="1"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Select"/>
+            <Property name="enabled" type="boolean" value="false"/>
           </Properties>
           <Events>
-            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jButton7MouseClicked"/>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btnViewBookingMouseClicked"/>
           </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="lblCar">

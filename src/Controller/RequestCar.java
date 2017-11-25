@@ -8,7 +8,6 @@ import javax.swing.JFrame;
 import View.*;
 import java.awt.event.ActionEvent;
 import Model.*;
-import java.awt.Image;
 import java.util.List;
 import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
@@ -18,13 +17,64 @@ import javax.swing.JOptionPane;
  */
 public class RequestCar {
     static RequestView request = new RequestView();
+    static Booking bookingview = new Booking();
     static searchHandler searchcar = new searchHandler();
     static DepositHandler deposit = new DepositHandler();
     static AvailableCars carsmodel = new AvailableCars();
+    static BookHandler bookhandler = new BookHandler();
+    static selectHandler select = new selectHandler();
     static User usermodel = new User();
     static Login login = new Login();
     static Deposits depo = new Deposits();
+    static Book bookingmodel = new Book();
     public static List<Object> subscription_details;
+    static GeneratePriceHandler generateprice  = new GeneratePriceHandler();
+    
+    static class GeneratePriceHandler implements ActionListener{
+
+        @Override
+        public void actionPerformed(ActionEvent e){
+            try{
+            int number_of_hours =(int) bookingview.getNumberOfHours().getValue();
+            int price_per_hour = (int) bookingview.getPriceHour().getValue();
+            
+            int total_price = (number_of_hours * price_per_hour)-1000;
+            bookingview.getTotalPrice().setValue(total_price);
+            
+            }catch(Exception ex){
+                ex.printStackTrace();
+            }
+                        
+        }
+        
+    }
+     
+    
+    static class BookHandler implements ActionListener{
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            
+            try{
+                
+            }catch(Exception ex){
+                ex.printStackTrace();
+            }
+            
+            
+        }
+        
+        
+        
+    }
+    static class selectHandler implements ActionListener{
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            showBookingview();
+        }
+        
+    }
     
     
     static class DepositHandler implements ActionListener{
@@ -59,6 +109,7 @@ public class RequestCar {
                     request.getCategory().setEditable(false);
                     request.getModeler().setEditable(false);
                     request.getYear().setEditable(false);
+                    request.getBookingView().setEnabled(true);
                     
                     
                 }else{
@@ -78,10 +129,7 @@ public class RequestCar {
             }
                                     
             
-        }
-        
-        
-        
+        }        
     }
     
     
@@ -101,11 +149,28 @@ public class RequestCar {
         request.getCreditBalance().setEnabled(false);
         request.searchCar().addActionListener(searchcar);
         request.getDeposit().addActionListener(deposit);
+        request.getBookingView().addActionListener(select);
        
         }catch(Exception ex){
             ex.printStackTrace();
         }
           return request;
+    }
+    public static JFrame showBookingview(){
+        try{
+        bookingview.getUsername().setText(request.getUsername().getText());
+        bookingview.getModel().setText(request.getModeler().getText());
+        bookingview.getMake().setText(request.getMaker().getText());
+        bookingview.getPriceHour().setValue(bookingmodel.getPricePerHour(bookingview.getModel().getText()).get(0));
+        bookingview.getGeneratePrice().addActionListener(generateprice);
+        bookingview.setLocationRelativeTo(null);
+        bookingview.setResizable(false);
+        bookingview.setVisible(true);
+      
+        }catch(Exception ex){
+            ex.printStackTrace();
+        }
+          return bookingview;
     }
     
     

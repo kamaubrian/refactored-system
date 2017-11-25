@@ -146,10 +146,7 @@ public class User extends Base{
                ex.printStackTrace();
            }finally{
                closeConnection();
-           }
-           
-           
+           }                      
            return true;
        } 
-
 }
