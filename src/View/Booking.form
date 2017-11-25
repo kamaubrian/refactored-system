@@ -259,6 +259,7 @@
               <Font name="Ubuntu" size="13" style="1"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Compl. Booking"/>
+            <Property name="enabled" type="boolean" value="false"/>
           </Properties>
         </Component>
       </SubComponents>

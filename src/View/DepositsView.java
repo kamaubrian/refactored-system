@@ -7,6 +7,8 @@ package View;
 
 import javax.swing.JButton;
 import javax.swing.JProgressBar;
+import javax.swing.JSpinner;
+import javax.swing.JTextField;
 
 /**
  *
@@ -32,9 +34,9 @@ public class DepositsView extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jSpinner1 = new javax.swing.JSpinner();
+        spinDeposit = new javax.swing.JSpinner();
         jLabel2 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        txtUsername = new javax.swing.JTextField();
         rate = new javax.swing.JProgressBar();
         jButton1 = new javax.swing.JButton();
         btnDeposit = new javax.swing.JButton();
@@ -44,10 +46,13 @@ public class DepositsView extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Ubuntu", 1, 13)); // NOI18N
         jLabel1.setText("Enter Amount");
 
+        spinDeposit.setFont(new java.awt.Font("Ubuntu", 1, 13)); // NOI18N
+        spinDeposit.setModel(new javax.swing.SpinnerNumberModel(0, 0, null, 1));
+
         jLabel2.setFont(new java.awt.Font("Ubuntu", 1, 13)); // NOI18N
         jLabel2.setText("Verify with Username");
 
-        jTextField1.setFont(new java.awt.Font("Ubuntu", 1, 13)); // NOI18N
+        txtUsername.setFont(new java.awt.Font("Ubuntu", 1, 13)); // NOI18N
 
         jButton1.setFont(new java.awt.Font("Ubuntu", 1, 13)); // NOI18N
         jButton1.setText("Cancel");
@@ -74,8 +79,8 @@ public class DepositsView extends javax.swing.JFrame {
                                 .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(jSpinner1, javax.swing.GroupLayout.DEFAULT_SIZE, 137, Short.MAX_VALUE)
-                                .addComponent(jTextField1)))))
+                                .addComponent(spinDeposit, javax.swing.GroupLayout.DEFAULT_SIZE, 137, Short.MAX_VALUE)
+                                .addComponent(txtUsername)))))
                 .addContainerGap(23, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -83,12 +88,12 @@ public class DepositsView extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(25, 25, 25)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jSpinner1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(spinDeposit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel1))
                 .addGap(24, 24, 24)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtUsername, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton1)
@@ -119,7 +124,6 @@ public class DepositsView extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     /**
-     * @param args the command line arguments
      * @return 
      */
 public JProgressBar getProgress(){
@@ -128,6 +132,12 @@ public JProgressBar getProgress(){
 public JButton getDeposit(){
     return btnDeposit;
 }
+public JSpinner getDepositAmount(){
+    return spinDeposit;
+}
+public JTextField getUsername(){
+    return txtUsername;
+}
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnDeposit;
@@ -135,8 +145,8 @@ public JButton getDeposit(){
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JSpinner jSpinner1;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JProgressBar rate;
+    private javax.swing.JSpinner spinDeposit;
+    private javax.swing.JTextField txtUsername;
     // End of variables declaration//GEN-END:variables
 }

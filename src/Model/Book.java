@@ -12,7 +12,7 @@ import java.util.List;
  * @author Brian Kamau 
  */
 public class Book extends Base {
-    public boolean makeBooking(String username,String make,String model,int hourly_price,int hours_booked,double total_price ) throws SQLException{
+    public boolean makeBooking(String username,String make,String model,int hourly_price,int hours_booked,int total_price ) throws SQLException{
         String sql;
         try{
             getConnection();
@@ -23,7 +23,7 @@ public class Book extends Base {
             pst.setString(3,model);
             pst.setInt(4, hourly_price);
             pst.setInt(5,hours_booked);
-            pst.setDouble(6,total_price);
+            pst.setInt(6,total_price);
             pst.executeUpdate();
         }catch(Exception ex){
             ex.printStackTrace();

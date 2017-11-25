@@ -40,6 +40,7 @@ public class RequestCar {
             
             int total_price = (number_of_hours * price_per_hour)-1000;
             bookingview.getTotalPrice().setValue(total_price);
+            bookingview.completeBooking().setEnabled(true);
             
             }catch(Exception ex){
                 ex.printStackTrace();
@@ -54,14 +55,31 @@ public class RequestCar {
 
         @Override
         public void actionPerformed(ActionEvent e) {
-            
+          int credit_balance;
+          int price;
             try{
+                credit_balance = (int) usermodel.getCreditBalance(bookingview.getUsername().getText()).get(0);
+                price = (int) bookingview.getTotalPrice().getValue();
+                if(credit_balance < price){
+                    JOptionPane.showMessageDialog(bookingview,"Insufficient Funds to Complete Transaction");
+                }else{
+                    String username =bookingview.getUsername().getText();
+                    String make = bookingview.getMake().getText();
+                    String model =bookingview.getModel().getText();
+                    int hourly_price = (int)bookingview.getPriceHour().getValue();
+                    int hours_booked = (int) bookingview.getNumberOfHours().getValue();
+                    int total_price =(int) bookingview.getTotalPrice().getValue();
+                    bookingmodel.makeBooking(username, make, model, hourly_price, hours_booked, total_price);
+                    JOptionPane.showMessageDialog(bookingview,"Transaction Completed Successfully");
+                    bookingview.dispose();
+                    
+                }
                 
             }catch(Exception ex){
                 ex.printStackTrace();
             }
             
-            
+          
         }
         
         
@@ -163,6 +181,7 @@ public class RequestCar {
         bookingview.getMake().setText(request.getMaker().getText());
         bookingview.getPriceHour().setValue(bookingmodel.getPricePerHour(bookingview.getModel().getText()).get(0));
         bookingview.getGeneratePrice().addActionListener(generateprice);
+        bookingview.completeBooking().addActionListener(bookhandler);
         bookingview.setLocationRelativeTo(null);
         bookingview.setResizable(false);
         bookingview.setVisible(true);

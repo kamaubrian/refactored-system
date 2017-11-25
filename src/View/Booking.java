@@ -16,6 +16,7 @@ public class Booking extends javax.swing.JFrame {
      */
     public Booking() {
         initComponents();
+        
     }
 
     /**
@@ -92,6 +93,7 @@ public class Booking extends javax.swing.JFrame {
 
         btnCompleteBooking.setFont(new java.awt.Font("Ubuntu", 1, 13)); // NOI18N
         btnCompleteBooking.setText("Compl. Booking");
+        btnCompleteBooking.setEnabled(false);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);

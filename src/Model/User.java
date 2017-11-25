@@ -122,6 +122,7 @@ public class User extends Base{
                rst=pst.executeQuery();
                if(rst.next()){
                    details.add(rst.getInt("ID"));
+                   
                }
                              
            }catch(Exception ex){
@@ -148,5 +149,44 @@ public class User extends Base{
                closeConnection();
            }                      
            return true;
-       } 
+       }
+              public List<Object> getCreditBalance(String username) throws SQLException{
+           String sql;
+           List<Object> details = new ArrayList();
+           try{
+               getConnection();
+               sql="SELECT * FROM ACCOUNT WHERE Username=?";
+               pst=conn.prepareStatement(sql);
+               pst.setString(1,username);
+               rst=pst.executeQuery();
+               if(rst.next()){
+                   details.add(rst.getInt("Credit_Balance"));
+                   
+               }
+                             
+           }catch(Exception ex){
+               ex.printStackTrace();
+           }finally{
+               closeConnection();
+           }
+           return details;
+       }
+              public boolean updateAccount(int credit,String username) throws SQLException{
+                  String sql;
+                  try{
+                      getConnection();
+                      sql="UPDATE ACCOUNT SET Credit_Balance =? WHERE Username =? ";
+                      pst=conn.prepareStatement(sql);
+                      pst.setInt(1, credit);
+                      pst.setString(2, username);
+                      pst.execute();
+                  }catch(Exception ex){
+                      ex.printStackTrace();
+                  }finally{
+                      closeConnection();
+                  }
+                  
+                  
+                  return true;
+              }
 }

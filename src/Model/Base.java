@@ -91,7 +91,7 @@ public  abstract class Base implements BaseUtils {
                 + "MODEL VARCHAR(25) NOT NULL REFERENCES CARS_AVAILABLE(MODEL),"
                 + "PRICE_HOURLY INT NOT NULL REFERENCES CARS_AVAILABLE(PRICE_PERHOUR),"
                 + "HOURS_BOOKED INT NOT NULL,"
-                + "TOTAL_PRICE DOUBLE NOT NULL,"
+                + "TOTAL_PRICE INT NOT NULL,"
                 + "Created_At TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,"
                 + "PRIMARY KEY(ID))";
         stat.addBatch(sql);
