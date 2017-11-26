@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package View;
-
+import javax.swing.*;
 /**
  *
  * @author Esperant
@@ -119,9 +119,11 @@ public class AdminView extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     /**
-     * @param args the command line arguments
+     * @return 
      */
-
+public JTable getTable(){
+    return customerLog;
+}
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTable customerLog;
