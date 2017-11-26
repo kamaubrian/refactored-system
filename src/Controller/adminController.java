@@ -19,5 +19,11 @@ public class adminController {
         adminview.setVisible(true);
         return adminview;
     }
+    public void populateTable(){
+        
+        
+        
+        
+    }
     
 }
