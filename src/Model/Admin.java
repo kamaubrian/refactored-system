@@ -12,26 +12,23 @@ import java.sql.*;
  * @author Esperant
  */
 public class Admin extends Base {
-    public List<Object> populateTable() throws SQLException{
+    public ArrayList<ArrayList<String>> populateTable() throws SQLException{
         String sql;
-        List<Object> tableitems = new ArrayList();
+        ArrayList<ArrayList<String>> tableitems = new ArrayList();
         try{
             getConnection();
             sql="SELECT * FROM BOOKING";
             pst=conn.prepareStatement(sql);
             rst = pst.executeQuery();
             while(rst.next()){
-                List<Object> items = new ArrayList();
+                ArrayList<String> items = new ArrayList();
                 items.add(rst.getString("Username"));
                 items.add(rst.getString("MAKE"));
                 items.add(rst.getString("MODEL"));
                 items.add(rst.getString("Created_At"));
                 
                 tableitems.add(items);
-            }
-            
-            
-                                                            
+            }                                                            
         }catch(Exception ex){
             ex.printStackTrace();
         }finally{

@@ -94,7 +94,6 @@ public class NewUserController {
             }
             if(!password.equals(c_Password)){
                 JOptionPane.showMessageDialog(newUser,"Passwords Do Not Match");
-                return;
             }
             else{
                String table ="customer";
