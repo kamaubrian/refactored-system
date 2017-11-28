@@ -13,7 +13,6 @@ import javax.swing.JTextField;
 
 /**
  *
- * @author esperant
  */
 public class RequestView extends javax.swing.JFrame {
 

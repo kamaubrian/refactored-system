@@ -7,7 +7,6 @@ package Model.utils;
 import java.sql.*;
 /**
  *
- * @author Esperant
  */
 public interface BaseUtils {
     

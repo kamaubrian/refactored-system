@@ -9,7 +9,6 @@ import java.util.ArrayList;
 import java.util.List;
 /**
  *
- * @author Brian Kamau 
  */
 public class Book extends Base {
     public boolean makeBooking(String username,String make,String model,int hourly_price,int hours_booked,int total_price ) throws SQLException{

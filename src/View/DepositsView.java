@@ -12,7 +12,6 @@ import javax.swing.JTextField;
 
 /**
  *
- * @author Esperant
  */
 public class DepositsView extends javax.swing.JFrame {
 

@@ -19,7 +19,7 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author Esperant
+ * 
  */
 
 public class Login {

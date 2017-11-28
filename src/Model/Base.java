@@ -10,7 +10,6 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 /**
  *
- * @author Esperant
  */
 public  abstract class Base implements BaseUtils {
     public static String dbUsername ="root";

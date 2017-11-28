@@ -14,7 +14,6 @@ import javax.swing.JTextField;
 
 /**
  *
- * @author esperant
  */
 public final class LoginView extends javax.swing.JFrame {
     

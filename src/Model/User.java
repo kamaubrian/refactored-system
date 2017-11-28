@@ -11,7 +11,6 @@ import java.util.List;
 
 /**
  *
- * @author Esperant
  */
 public class User extends Base{
     

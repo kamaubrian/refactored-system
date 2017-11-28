@@ -9,7 +9,6 @@ import java.util.ArrayList;
 import java.sql.*;
 /**
  *
- * @author Esperant
  */
 public class Admin extends Base {
     public ArrayList<ArrayList<String>> populateTable() throws SQLException{

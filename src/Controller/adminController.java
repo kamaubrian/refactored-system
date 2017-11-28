@@ -14,7 +14,7 @@ import javax.swing.JFrame;
 import javax.swing.table.DefaultTableModel;
 /**
  *
- * @author Esperant
+ * 
  */
 public class adminController {
     static AdminView adminview = new AdminView();
@@ -24,6 +24,9 @@ public class adminController {
     
     public static JFrame showPage(){
         adminview.setVisible(true);
+        adminview.setTitle("Administrator View");
+        adminview.setResizable(false);
+        adminview.setLocationRelativeTo(null);
         populateTable();
         return adminview;
     }
@@ -41,8 +44,7 @@ public class adminController {
               };
               tablemodel.addRow(list);
               
-          }            
-            
+           }                        
         }catch(Exception ex){
             ex.printStackTrace();
         }        

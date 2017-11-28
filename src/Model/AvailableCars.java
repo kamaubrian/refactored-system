@@ -12,7 +12,6 @@ import java.util.logging.Logger;
 
 /**
  *
- * @author Esperant
  */
 public class AvailableCars extends Base {
     

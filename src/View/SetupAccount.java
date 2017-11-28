@@ -7,7 +7,6 @@ package View;
 import javax.swing.*;
 /**
  *
- * @author Esperant
  */
 public class SetupAccount extends javax.swing.JFrame {
 

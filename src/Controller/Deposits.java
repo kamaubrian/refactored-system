@@ -12,7 +12,7 @@ import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 /**
  *
- * @author Esperant
+ *
  */
 public class Deposits {
     static DepositsView deposit = new DepositsView();

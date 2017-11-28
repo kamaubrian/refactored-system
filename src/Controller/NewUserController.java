@@ -15,7 +15,7 @@ import Model.*;
 
 /**
  *
- * @author Esperant
+ * @ 
  */
 public class NewUserController {
         static newAccountHandler accounts = new newAccountHandler();

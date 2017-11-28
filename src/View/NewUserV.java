@@ -12,7 +12,6 @@ import javax.swing.JTextField;
 
 /**
  *
- * @author Esperant
  */
 public  final class NewUserV extends javax.swing.JFrame {
 

@@ -13,7 +13,7 @@ import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
 /**
  *
- * @author Esperant
+ * 
  */
 public class RequestCar {
     static RequestView request = new RequestView();
