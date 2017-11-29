@@ -4,7 +4,6 @@
  * and open the template in the editor.
  */
 package Model;
-import java.util.List;
 import java.util.ArrayList;
 import java.sql.*;
 /**
@@ -34,8 +33,5 @@ public class Admin extends Base {
             closeConnection();
         }        
         return tableitems;
-    } 
-    
-    
-    
+    }             
 }
