@@ -39,7 +39,8 @@ public class adminController {
         XYDataset data = createDataset();
         JFreeChart chart = ChartFactory.createXYLineChart("Test Chart",
                         "x", "y", data, PlotOrientation.VERTICAL, true, true,
-                        true);
+                        false);
+        adminview.getAccountsPane().setLayout(new java.awt.BorderLayout());
         ChartPanel charww = new ChartPanel(chart);
         adminview.getAccountsPane().add(charww);
         return adminview;
