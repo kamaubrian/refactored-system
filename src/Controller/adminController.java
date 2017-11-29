@@ -6,11 +6,19 @@
 package Controller;
 import Model.Admin;
 import View.*;
+import java.awt.Color;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 import javax.swing.JFrame;
 import javax.swing.table.DefaultTableModel;
+import org.jfree.chart.ChartFactory;
+import org.jfree.chart.ChartPanel;
+import org.jfree.chart.JFreeChart;
+import org.jfree.chart.plot.PlotOrientation;
+import org.jfree.data.xy.DefaultXYDataset;
+import org.jfree.data.xy.XYDataset;
+
 /**
  *
  * 
@@ -27,6 +35,13 @@ public class adminController {
         adminview.setResizable(false);
         adminview.setLocationRelativeTo(null);
         populateTable();
+        adminview.getAccountsPane().setBackground(Color.white);
+        XYDataset data = createDataset();
+        JFreeChart chart = ChartFactory.createXYLineChart("Test Chart",
+                        "x", "y", data, PlotOrientation.VERTICAL, true, true,
+                        true);
+        ChartPanel charww = new ChartPanel(chart);
+        adminview.getAccountsPane().add(charww);
         return adminview;
     }
     public static void populateTable(){
@@ -47,6 +62,16 @@ public class adminController {
         }catch(Exception ex){
             ex.printStackTrace();
         }        
+    }
+    public static XYDataset createDataset(){
+        DefaultXYDataset finance = new DefaultXYDataset();
+        try{
+            double[][] data ={{0.1,0.2,0.3},{1,2,3}};
+            finance.addSeries("Financial Info", data);
+        }catch(Exception ex){
+            ex.printStackTrace();
+        }
+        return finance;
     }
     
 }
