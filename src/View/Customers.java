@@ -33,6 +33,9 @@ public class Customers extends javax.swing.JFrame {
         customerTable = new javax.swing.JTable();
         btnDisable = new javax.swing.JButton();
         btnHome = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+        lblNumber = new javax.swing.JLabel();
+        lblNus = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -82,6 +85,14 @@ public class Customers extends javax.swing.JFrame {
         btnHome.setFont(new java.awt.Font("Ubuntu", 1, 13)); // NOI18N
         btnHome.setText("Home");
 
+        jLabel2.setFont(new java.awt.Font("Ubuntu", 1, 13)); // NOI18N
+        jLabel2.setText("Total Number of Customers: ");
+
+        lblNumber.setFont(new java.awt.Font("Ubuntu", 1, 13)); // NOI18N
+
+        lblNus.setFont(new java.awt.Font("Ubuntu", 1, 13)); // NOI18N
+        lblNus.setText("0");
+
         javax.swing.GroupLayout panelMainLayout = new javax.swing.GroupLayout(panelMain);
         panelMain.setLayout(panelMainLayout);
         panelMainLayout.setHorizontalGroup(
@@ -97,6 +108,13 @@ public class Customers extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(btnHome, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
+            .addGroup(panelMainLayout.createSequentialGroup()
+                .addComponent(jLabel2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(panelMainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblNus, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         panelMainLayout.setVerticalGroup(
             panelMainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -104,11 +122,18 @@ public class Customers extends javax.swing.JFrame {
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(panelMainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(panelMainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel2)
+                        .addComponent(lblNus))
+                    .addGroup(panelMainLayout.createSequentialGroup()
+                        .addComponent(lblNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 0, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(16, 16, 16)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 17, Short.MAX_VALUE)
                 .addGroup(panelMainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnDisable)
-                    .addComponent(btnHome))
-                .addContainerGap())
+                    .addComponent(btnHome)))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -143,13 +168,19 @@ public JButton goHome(){
 public JButton disableUser(){
     return btnDisable;
 }
+public JLabel getUsers(){
+    return lblNus;
+}
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnDisable;
     private javax.swing.JButton btnHome;
     private javax.swing.JTable customerTable;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel lblNumber;
+    private javax.swing.JLabel lblNus;
     private javax.swing.JPanel panelMain;
     // End of variables declaration//GEN-END:variables
 }

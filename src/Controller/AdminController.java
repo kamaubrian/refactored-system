@@ -71,6 +71,7 @@ public class AdminController {
     }
     public static void populateTable(){
         ArrayList<ArrayList<String>> items = new ArrayList();
+      //  int number_of_users = 0;
         try{
           items = adminmodel.populateTable();
           if(tablemodel.getRowCount()!=0){
@@ -82,11 +83,12 @@ public class AdminController {
                   x.get(0),x.get(1),x.get(2),x.get(3)
               };
               tablemodel.addRow(list);
+             // number_of_users= tablemodel.getRowCount();
               
            }                        
         }catch(Exception ex){
             ex.printStackTrace();
-        }        
+        }   
     }
     public static XYDataset createDataset(){
         DefaultXYDataset finance = new DefaultXYDataset();

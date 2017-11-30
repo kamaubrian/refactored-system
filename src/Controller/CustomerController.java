@@ -58,12 +58,14 @@ public class CustomerController {
         populateTable();
         customerview.goHome().addActionListener(homehandler);
         customerview.disableUser().addActionListener(delete);
+        customerview.getUsers().setText(String.valueOf(populateTable()));
         customerview.setVisible(true);                
         return customerview;
     }
     
-    public static void populateTable(){
+    public static int populateTable(){
         ArrayList<ArrayList<String>> tabledetails;
+        int number_of_user=0;
         try{
             tabledetails = usermodel.getUserDetails();
             if(tablemodel.getRowCount()!=0){
@@ -75,9 +77,11 @@ public class CustomerController {
                   x.get(0),x.get(1),x.get(2),x.get(3),x.get(4)
                 };
                 tablemodel.addRow(items);
+             number_of_user=tablemodel.getRowCount();
             }                                         
         }catch(Exception ex){
             ex.printStackTrace();
         }
+        return number_of_user;
     }    
 }
