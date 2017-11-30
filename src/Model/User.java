@@ -188,4 +188,30 @@ public class User extends Base{
                   
                   return true;
               }
+              
+              public ArrayList<ArrayList<String>> getUserDetails() throws SQLException{
+                  ArrayList<ArrayList<String>> userdetails = new ArrayList();
+                  String sql;
+                  try{
+                      getConnection();
+                      sql="SELECT * FROM USER";
+                      pst=conn.prepareStatement(sql);
+                      rst=pst.executeQuery();
+                      while(rst.next()){
+                          ArrayList<String> user = new ArrayList<>();
+                          user.add(rst.getString("ID_PASSPORT"));
+                          user.add(rst.getString("FirstName"));
+                          user.add(rst.getString("LastName"));
+                          user.add(rst.getString("Phone"));
+                          user.add(rst.getString("Created_At"));
+                          userdetails.add(user);
+                      }
+                      
+                  }catch(Exception ex){
+                      ex.printStackTrace();
+                  }finally{
+                      closeConnection();
+                  }
+                  return userdetails;
+              }
 }

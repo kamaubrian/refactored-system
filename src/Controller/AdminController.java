@@ -9,6 +9,8 @@ import View.*;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -25,11 +27,28 @@ import org.jfree.data.xy.XYDataset;
  *
  * 
  */
-public class adminController {
+public class AdminController {
     static AdminView adminview = new AdminView();
     static Admin adminmodel = new Admin();
     static DefaultTableModel tablemodel = (DefaultTableModel)adminview.getTable().getModel();
     static Map itemlist = new HashMap();
+    static CustomerHandler customers = new CustomerHandler();
+    
+    static class CustomerHandler implements ActionListener{
+        @Override
+        public void actionPerformed(ActionEvent e){
+            try{
+                adminview.dispose();
+                CustomerController.showCustomers();
+                
+            }catch(Exception ex){
+                ex.printStackTrace();
+            }
+            
+            
+            
+        }        
+    }
     
     public static JFrame showPage(){
         adminview.setSize(new Dimension(900,900));
@@ -37,6 +56,7 @@ public class adminController {
         adminview.setTitle("Administrator View");
         adminview.setResizable(false);
         adminview.setLocationRelativeTo(null);
+        adminview.viewCustomers().addActionListener(customers);
         populateTable();
         adminview.getAccountsPane().setBackground(Color.white);
         XYDataset data = createDataset();

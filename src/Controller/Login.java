@@ -73,7 +73,7 @@ public class Login {
                     if(loginmodel.getUsername(table,username).equals(username) && loginmodel.getPassword(table,password)
                             .equals(password)){
                         System.out.println("Welcome Admin");
-                        adminController.showPage();
+                        AdminController.showPage();
                         
                         
                     }else{
