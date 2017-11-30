@@ -26,8 +26,7 @@ public class AvailableCars extends Base {
             rst=pst.executeQuery();
             if(rst.next()){
                 path.add(rst.getString("Resource_Path"));
-            }
-            
+            }           
         }catch(Exception ex){
             ex.printStackTrace();
         }finally{

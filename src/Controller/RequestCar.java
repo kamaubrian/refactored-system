@@ -8,8 +8,11 @@ import javax.swing.JFrame;
 import View.*;
 import java.awt.event.ActionEvent;
 import Model.*;
+import java.awt.FlowLayout;
 import java.util.List;
 import java.awt.event.ActionListener;
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 /**
  *
@@ -128,7 +131,16 @@ public class RequestCar {
                     request.getModeler().setEditable(false);
                     request.getYear().setEditable(false);
                     request.getBookingView().setEnabled(true);
+                /*    try{
+                    Icon icon = new ImageIcon("Resources/availableCars/coupe.png");
+                    //request.carPanel().setLayout(new FlowLayout(FlowLayout.CENTER));
+                    request.carsIcon().setIcon(icon);
+                    request.carPanel().add(request.carsIcon());
+                    }catch(Exception ex){
+                        ex.printStackTrace();
+                    }
                     
+                    */
                     
                 }else{
                     System.out.println("Car Not Found");
