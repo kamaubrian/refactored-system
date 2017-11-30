@@ -6,7 +6,9 @@
 package Controller;
 import Model.Admin;
 import View.*;
+import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.Dimension;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -30,6 +32,7 @@ public class adminController {
     static Map itemlist = new HashMap();
     
     public static JFrame showPage(){
+        adminview.setSize(new Dimension(900,900));
         adminview.setVisible(true);
         adminview.setTitle("Administrator View");
         adminview.setResizable(false);
@@ -37,12 +40,13 @@ public class adminController {
         populateTable();
         adminview.getAccountsPane().setBackground(Color.white);
         XYDataset data = createDataset();
-        JFreeChart chart = ChartFactory.createXYLineChart("Test Chart",
-                        "x", "y", data, PlotOrientation.VERTICAL, true, true,
+        JFreeChart chart = ChartFactory.createXYLineChart("Expected Growth Margins",
+                        "Percent", "Revenue(%)", data, PlotOrientation.VERTICAL, true, true,
                         false);
         adminview.getAccountsPane().setLayout(new java.awt.BorderLayout());
+        adminview.getAccountsPane().setSize(0, 0);
         ChartPanel charww = new ChartPanel(chart);
-        adminview.getAccountsPane().add(charww);
+        adminview.getAccountsPane().add(charww,BorderLayout.CENTER);
         return adminview;
     }
     public static void populateTable(){
