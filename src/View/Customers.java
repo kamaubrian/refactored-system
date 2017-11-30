@@ -141,7 +141,7 @@ public JButton goHome(){
     return btnHome;
 }
 public JButton disableUser(){
-    return btnHome;
+    return btnDisable;
 }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

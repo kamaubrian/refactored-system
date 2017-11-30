@@ -22,6 +22,22 @@ public class CustomerController {
     static DefaultTableModel tablemodel = (DefaultTableModel)customerview.getCustomersTable().getModel();
     static Map itemlist = new HashMap();
     static HomeHandler homehandler = new HomeHandler();
+    static DeleteHandler delete = new DeleteHandler();
+    
+    static class DeleteHandler implements ActionListener{
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            try{
+                JOptionPane.showMessageDialog(customerview,"Feature Available in Next Release");
+            }catch(Exception ex){
+                ex.printStackTrace();
+            }
+            
+        }
+    
+    
+}
     
     static class HomeHandler implements ActionListener{
 
@@ -41,6 +57,7 @@ public class CustomerController {
         customerview.setResizable(false);
         populateTable();
         customerview.goHome().addActionListener(homehandler);
+        customerview.disableUser().addActionListener(delete);
         customerview.setVisible(true);                
         return customerview;
     }
@@ -62,6 +79,5 @@ public class CustomerController {
         }catch(Exception ex){
             ex.printStackTrace();
         }
-    }
-    
+    }    
 }

@@ -33,5 +33,20 @@ public class Admin extends Base {
             closeConnection();
         }        
         return tableitems;
-    }             
+    }
+    public boolean disableUser(String passport) throws SQLException{
+       String sql;
+        try{
+            getConnection();
+            sql="DELETE FROM USER WHERE ID_PASSPORT=?";
+            pst=conn.prepareStatement(sql);
+            pst.setString(1, passport);
+            pst.executeUpdate();
+        }catch(Exception ex){
+            ex.printStackTrace();
+        }finally{
+            closeConnection();
+        }
+        return true;
+    }
 }
