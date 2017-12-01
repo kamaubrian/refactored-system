@@ -32,6 +32,28 @@ public class RequestCar {
     static Book bookingmodel = new Book();
     public static List<Object> subscription_details;
     static GeneratePriceHandler generateprice  = new GeneratePriceHandler();
+    static SubscriptionHandler subscription = new SubscriptionHandler();
+    
+    
+    static class SubscriptionHandler implements ActionListener{
+
+        @Override
+        
+        public void actionPerformed(ActionEvent e) {
+            String username;
+            try{
+                username = request.getUsername().getText();
+                if(!bookingmodel.getBookingDetails(username).isEmpty()){
+                   JOptionPane.showMessageDialog(request,"Details Uploaded in Next Release"); 
+                }else{
+                    JOptionPane.showMessageDialog(request,"You have no Subscriptions yet");
+                }
+            }catch(Exception ex){
+                ex.printStackTrace();
+            }
+        }
+        
+    }
     
     static class GeneratePriceHandler implements ActionListener{
 
@@ -180,7 +202,7 @@ public class RequestCar {
         request.searchCar().addActionListener(searchcar);
         request.getDeposit().addActionListener(deposit);
         request.getBookingView().addActionListener(select);
-       
+        request.getSubscriptions().addActionListener(subscription);
         }catch(Exception ex){
             ex.printStackTrace();
         }

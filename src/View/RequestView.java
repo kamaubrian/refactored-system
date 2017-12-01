@@ -85,7 +85,7 @@ public class RequestView extends javax.swing.JFrame {
         passport = new javax.swing.JTextField();
         jLabel18 = new javax.swing.JLabel();
         username = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        btnSubscriptions = new javax.swing.JButton();
         jPanel7 = new javax.swing.JPanel();
         jLabel15 = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
@@ -385,8 +385,8 @@ public class RequestView extends javax.swing.JFrame {
 
         username.setEnabled(false);
 
-        jButton1.setFont(new java.awt.Font("Ubuntu", 1, 13)); // NOI18N
-        jButton1.setText("Edit Details? ");
+        btnSubscriptions.setFont(new java.awt.Font("Ubuntu", 1, 13)); // NOI18N
+        btnSubscriptions.setText("Current Subscriptions");
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
@@ -406,7 +406,7 @@ public class RequestView extends javax.swing.JFrame {
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
                 .addGap(0, 138, Short.MAX_VALUE)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnSubscriptions, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(68, 68, 68))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -431,7 +431,7 @@ public class RequestView extends javax.swing.JFrame {
                     .addComponent(jLabel18)
                     .addComponent(username, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton1)
+                .addComponent(btnSubscriptions)
                 .addContainerGap())
         );
 
@@ -709,16 +709,19 @@ public class RequestView extends javax.swing.JFrame {
     public JButton getBookingView(){
         return btnViewBooking;
     }
+    public JButton getSubscriptions(){
+        return btnSubscriptions;
+    }
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Current_time;
     private javax.swing.JInternalFrame MiniFrameTicket;
     private javax.swing.JButton btnSearch;
+    private javax.swing.JButton btnSubscriptions;
     private javax.swing.JButton btnViewBooking;
     private javax.swing.JTextField customer_Name;
     private javax.swing.JButton getDeposit;
-    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;

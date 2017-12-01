@@ -7,6 +7,7 @@ package Model;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -70,6 +71,26 @@ public class AvailableCars extends Base {
         }
         
         return carfound;
+    }
+    public boolean addCar(String make,String model,Date date,String category,int price,String resource_path) throws SQLException{
+        String sql;
+        try{
+            getConnection();
+            sql="INSERT INTO CARS_AVAILABLE(MAKE,MODEL,YEAR,CATEGORY,PRICE_PERHOUR,Resource_Path) VALUES(?,?,?,?,?,?)";
+            pst=conn.prepareStatement(sql);
+            pst.setString(1,make);
+            pst.setString(2,model);
+            pst.setDate(3, (java.sql.Date) date);
+            pst.setString(4, category);
+            pst.setInt(5,price);
+            pst.setString(6, resource_path);
+            pst.executeUpdate();
+        }catch(Exception ex){
+            ex.printStackTrace();
+        }finally{
+            closeConnection();
+        }
+        return true;
     }
     public boolean findCarExists(String model,String make){
         return !getCarExists(model,make).isEmpty();

@@ -51,4 +51,27 @@ public class Book extends Base {
         }
         return pricedetails;
     }
+    public List<Object> getBookingDetails(String username)throws SQLException{
+        String sql;
+        List<Object> booking_details = new ArrayList<>();
+        try{
+            getConnection();
+            sql="SELECT * FROM BOOKING WHERE USERNAME=?";
+            pst=conn.prepareStatement(sql);
+            pst.setString(1, username);
+            rst=pst.executeQuery();
+            if(rst.next()){
+                booking_details.add(rst.getInt("ID"));
+                booking_details.add(rst.getString("MAKE"));
+                booking_details.add(rst.getString("MODEL"));                
+                booking_details.add(rst.getInt("HOURS_BOOKED"));
+                booking_details.add(rst.getString("TOTAL_PRICE"));
+            }
+        }catch(Exception ex){
+            ex.printStackTrace();
+        }finally{
+            closeConnection();
+        }       
+        return booking_details;
+    }
 }
