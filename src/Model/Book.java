@@ -61,7 +61,7 @@ public class Book extends Base {
             pst.setString(1, username);
             rst=pst.executeQuery();
             if(rst.next()){
-                booking_details.add(rst.getInt("ID"));
+                booking_details.add(rst.getString("USERNAME"));
                 booking_details.add(rst.getString("MAKE"));
                 booking_details.add(rst.getString("MODEL"));                
                 booking_details.add(rst.getInt("HOURS_BOOKED"));
@@ -73,5 +73,38 @@ public class Book extends Base {
             closeConnection();
         }       
         return booking_details;
+    }
+    public boolean createReturnLog(String username,String make,String model,int hours)throws SQLException{
+       String sql;
+        try{
+            getConnection();
+            sql="INSERT INTO RETURN_LOGS(USERNAME,MAKE,MODEL,HOURS_BOOKED) VALUES(?,?,?,?)";
+            pst=conn.prepareStatement(sql);
+            pst.setString(1,username);
+            pst.setString(2,make);
+            pst.setString(3, model);
+            pst.setInt(4,hours);
+            pst.executeUpdate();
+        }catch(Exception ex){
+            ex.printStackTrace();
+        }finally{
+            closeConnection();
+        }
+        return true;
+    }
+    public boolean returnCar(String username)throws SQLException{
+        String sql;
+        try{
+            getConnection();
+            sql="DELETE FROM BOOKING WHERE USERNAME =?";
+            pst=conn.prepareStatement(sql);
+            pst.setString(1,username);
+            pst.executeUpdate();
+        }catch(Exception ex){
+            ex.printStackTrace();
+        }finally{
+            closeConnection();
+        }        
+        return true;
     }
 }

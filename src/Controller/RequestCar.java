@@ -44,7 +44,8 @@ public class RequestCar {
             try{
                 username = request.getUsername().getText();
                 if(!bookingmodel.getBookingDetails(username).isEmpty()){
-                   JOptionPane.showMessageDialog(request,"Details Uploaded in Next Release"); 
+                  // JOptionPane.showMessageDialog(request,"Details Uploaded in Next Release");
+                   ReturnCarController.showReturnPage();
                 }else{
                     JOptionPane.showMessageDialog(request,"You have no Subscriptions yet");
                 }
@@ -226,6 +227,8 @@ public class RequestCar {
           return bookingview;
     }
     
-    
+    public static String getUsername(){
+        return request.getUsername().getText();
+    }
     
 }

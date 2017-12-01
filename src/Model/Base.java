@@ -94,6 +94,15 @@ public  abstract class Base implements BaseUtils {
                 + "Created_At TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,"
                 + "PRIMARY KEY(ID))";
         stat.addBatch(sql);
+        sql="CREATE TABLE IF NOT EXISTS RETURN_LOGS("
+                + "ID INT NOT NULL AUTO_INCREMENT,"
+                + "USERNAME VARCHAR(25) NOT NULL,"
+                + "MAKE VARCHAR(16) NOT NULL,"
+                + "MODEL VARCHAR(16) NOT NULL,"
+                + "HOURS_BOOKED INT NOT NULL,"
+                + "Returned_On TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,"
+                + "PRIMARY KEY(ID))";
+        stat.addBatch(sql);
         
         stat.executeBatch();
         
