@@ -68,7 +68,6 @@ public class RequestView extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         txtCategory = new javax.swing.JTextField();
         jButton5 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
         btnViewBooking = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
         lblSearch = new javax.swing.JLabel();
@@ -299,10 +298,12 @@ public class RequestView extends javax.swing.JFrame {
         });
 
         jButton5.setFont(new java.awt.Font("Lucida Calligraphy", 1, 10)); // NOI18N
-        jButton5.setText(">>");
-
-        jButton6.setFont(new java.awt.Font("Lucida Calligraphy", 1, 10)); // NOI18N
-        jButton6.setText("<<");
+        jButton5.setText("Exit");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
 
         btnViewBooking.setFont(new java.awt.Font("Ubuntu", 1, 10)); // NOI18N
         btnViewBooking.setText("Select");
@@ -318,7 +319,7 @@ public class RequestView extends javax.swing.JFrame {
         lblSearch.setFont(new java.awt.Font("Ubuntu", 1, 13)); // NOI18N
         lblSearch.setText("Search By Model");
 
-        modelCombo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Bmw", "Mercedes", "Audi" }));
+        modelCombo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Bmw", "Mercedes", "Audi", "Toyota" }));
 
         jLabel14.setFont(new java.awt.Font("Ubuntu", 1, 13)); // NOI18N
         jLabel14.setText("Make");
@@ -582,9 +583,7 @@ public class RequestView extends javax.swing.JFrame {
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addComponent(btnViewBooking, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jButton6)
-                                .addGap(18, 18, 18)
-                                .addComponent(jButton5))
+                                .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(panelCars, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addContainerGap())
         );
@@ -619,8 +618,7 @@ public class RequestView extends javax.swing.JFrame {
                 .addGap(20, 20, 20)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnViewBooking)
-                    .addComponent(jButton5)
-                    .addComponent(jButton6))
+                    .addComponent(jButton5))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
@@ -650,6 +648,10 @@ public class RequestView extends javax.swing.JFrame {
     private void txtCategoryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCategoryActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtCategoryActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+       System.exit(0);
+    }//GEN-LAST:event_jButton5ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -724,7 +726,6 @@ public class RequestView extends javax.swing.JFrame {
     private javax.swing.JButton getDeposit;
     private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton8;
     private javax.swing.JComboBox jComboBox1;
     private javax.swing.JComboBox jComboBox2;

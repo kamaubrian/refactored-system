@@ -72,7 +72,7 @@ public class AvailableCars extends Base {
         
         return carfound;
     }
-    public boolean addCar(String make,String model,Date date,String category,int price,String resource_path) throws SQLException{
+    public boolean addCar(String make,String model,String date,String category,int price,String resource_path) throws SQLException{
         String sql;
         try{
             getConnection();
@@ -80,7 +80,7 @@ public class AvailableCars extends Base {
             pst=conn.prepareStatement(sql);
             pst.setString(1,make);
             pst.setString(2,model);
-            pst.setDate(3, (java.sql.Date) date);
+            pst.setString(3,date);
             pst.setString(4, category);
             pst.setInt(5,price);
             pst.setString(6, resource_path);

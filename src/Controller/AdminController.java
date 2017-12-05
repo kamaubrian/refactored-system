@@ -33,6 +33,18 @@ public class AdminController {
     static DefaultTableModel tablemodel = (DefaultTableModel)adminview.getTable().getModel();
     static Map itemlist = new HashMap();
     static CustomerHandler customers = new CustomerHandler();
+    static AddCars addcars = new AddCars();
+    static AddCarHandler addC = new AddCarHandler();
+    
+    static class AddCarHandler implements ActionListener{
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            AddCar.showAddCarsPage();
+        }
+    
+}
+    
     
     static class CustomerHandler implements ActionListener{
         @Override
@@ -67,6 +79,7 @@ public class AdminController {
         adminview.getAccountsPane().setSize(0, 0);
         ChartPanel charww = new ChartPanel(chart);
         adminview.getAccountsPane().add(charww,BorderLayout.CENTER);
+        adminview.updateCars().addActionListener(addC);
         return adminview;
     }
     public static void populateTable(){

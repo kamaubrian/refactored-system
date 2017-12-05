@@ -37,6 +37,9 @@ public class NewUserController {
                 String subscription = setAccount.getSubscription().getSelectedItem().toString();
                 if(usermodel.addAccount(acc_number, username, initial_credit, subscription)){
                     JOptionPane.showMessageDialog(setAccount, "Account Saved Success");
+                    setAccount.dispose();
+                    newUser.dispose();
+                    
                     
                 }else{
                     JOptionPane.showMessageDialog(setAccount, "Failed to Activate Account");
