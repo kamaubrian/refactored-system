@@ -149,12 +149,13 @@
               <Font name="Ubuntu" size="13" style="1"/>
             </Property>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="5">
+              <StringArray count="6">
                 <StringItem index="0" value="BMW"/>
                 <StringItem index="1" value="Mercedes"/>
                 <StringItem index="2" value="Audi"/>
                 <StringItem index="3" value="Toyota"/>
-                <StringItem index="4" value=" "/>
+                <StringItem index="4" value="Chevrolet"/>
+                <StringItem index="5" value=" "/>
               </StringArray>
             </Property>
           </Properties>
@@ -237,6 +238,10 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="txtResource">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Default"/>
+            <Property name="enabled" type="boolean" value="false"/>
+          </Properties>
         </Component>
         <Component class="javax.swing.JButton" name="btnAddCars">
           <Properties>

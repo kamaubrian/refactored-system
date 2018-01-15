@@ -44,8 +44,6 @@ public class AdminController {
         }
     
 }
-    
-    
     static class CustomerHandler implements ActionListener{
         @Override
         public void actionPerformed(ActionEvent e){
@@ -55,10 +53,7 @@ public class AdminController {
                 
             }catch(Exception ex){
                 ex.printStackTrace();
-            }
-            
-            
-            
+            }            
         }        
     }
     

@@ -53,7 +53,7 @@ public class AddCars extends javax.swing.JFrame {
         jLabel2.setText("Make");
 
         comboMake.setFont(new java.awt.Font("Ubuntu", 1, 13)); // NOI18N
-        comboMake.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "BMW", "Mercedes", "Audi", "Toyota", " " }));
+        comboMake.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "BMW", "Mercedes", "Audi", "Toyota", "Chevrolet", " " }));
 
         jLabel3.setFont(new java.awt.Font("Ubuntu", 1, 13)); // NOI18N
         jLabel3.setText("Model");
@@ -75,6 +75,9 @@ public class AddCars extends javax.swing.JFrame {
 
         jLabel7.setFont(new java.awt.Font("Ubuntu", 1, 13)); // NOI18N
         jLabel7.setText("Resource");
+
+        txtResource.setText("Default");
+        txtResource.setEnabled(false);
 
         btnAddCars.setFont(new java.awt.Font("Ubuntu", 1, 13)); // NOI18N
         btnAddCars.setText("ADD");
